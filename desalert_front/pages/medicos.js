@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 
-export const Medicos = () => {
+const Medicos = () => {
     return (
         <>
             <h1>Medicos</h1>
@@ -9,3 +9,5 @@ export const Medicos = () => {
         </>
     )
 }
+
+export default Medicos;
