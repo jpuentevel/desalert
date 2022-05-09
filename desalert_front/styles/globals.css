@@ -1,5 +1,6 @@
 html,
 body {
+  color: "#DBF2FF";
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -13,4 +14,31 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.degradado-azul-blanco {
+  background-image: linear-gradient(to bottom, #84b6f4, #95c6f7, #aad5f9, #c1e4fc, #dbf2ff);
+  width: 100%;
+  height: 5rem;
+}
+
+.opciones {
+  display: flex;
+  justify-content: space-evenly;
+  max-width: 100%;
+}
+
+.card-opcion {
+  border-radius: 50px;
+  background: #DBF2FF;
+  box-shadow: 20px 20px 60px #baced9,
+    -20px -20px 60px #fcffff;
+  height: 30rem;
+  width: 30rem;
+}
+
+.opcion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
