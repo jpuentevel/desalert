@@ -8,8 +8,8 @@ const CardOpcion = (props) => {
                 <div className="imagen-opcion opcion">
                     <Image src={props.imagen} width={400} height={400}></Image>
                 </div>
-                <div className="boton-opcio opcion">
-                    <button type='button' className='btn btn-lg mt-4' style={{ backgroundColor: "#84b6f4" }}>{props.opcion}</button>
+                <div className="opcion">
+                    <button type='button' className='btn mt-4 fs-4 text fw-bold boton-opcion' style={{ backgroundColor: "#84b6f4" }}>{props.opcion}</button>
                 </div>
             </div>
         </>

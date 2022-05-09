@@ -5,6 +5,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  width: 100%;
 }
 
 a {
@@ -16,16 +17,36 @@ a {
   box-sizing: border-box;
 }
 
+.logo-container {
+  display: flex;
+  justify-content: center;
+}
+
+.texto-header-container {
+  display: flex;
+  justify-content: center;
+}
+
+.texto-header {
+  font-size: 3.5rem;
+  max-width: 110rem;
+} 
+
+.fondo-header-opciones {
+  background: #84b6f4;
+  min-width: 100%;
+}
+
 .degradado-azul-blanco {
   background-image: linear-gradient(to bottom, #84b6f4, #95c6f7, #aad5f9, #c1e4fc, #dbf2ff);
-  width: 100%;
+  min-width: 100%;
   height: 5rem;
 }
 
 .opciones {
   display: flex;
   justify-content: space-evenly;
-  max-width: 100%;
+  min-width: 100%;
 }
 
 .card-opcion {
@@ -33,12 +54,38 @@ a {
   background: #DBF2FF;
   box-shadow: 20px 20px 60px #baced9,
     -20px -20px 60px #fcffff;
-  height: 30rem;
-  width: 30rem;
+  min-height: 35rem;
+  min-width: 30rem;
+  width: 50rem;
+  width: 40rem;
+  padding-top: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
 }
 
 .opcion {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.boton-opcion {
+  height: 4rem;
+  width: 15rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.texto-opciones {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.fondo-opciones {
+  width: 100%;
+  height: 100%;
+  background-color: #DBF2FF;
 }
