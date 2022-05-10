@@ -7,7 +7,7 @@ const OpcionesPresentacion = () => {
         <>
             <div className="row opciones" style={{ backgroundColor: "#DBF2FF" }}>
                 <div className='texto-opciones'>
-                    <p className='fs-1 fw-bold text' style={{  }}>¿Quièn eres?</p>
+                    <p className='fs-1 fw-bold text' >¿Quién eres?</p>
                 </div>
                 <div className="col col-sm-12 col-lg-6 opcion">
                     <CardOpcion opcion="Soy un Médico" imagen="/opcion-medico.svg" />

@@ -4,7 +4,7 @@ import React from 'react'
 const HeaderPresentacion = () => {
   return (
     <>
-        <div className="container p-4 fondo-header-opciones" style={{ height: "30rem" }}>
+        <div className="container fondo-header-opciones" style={{ height: "30rem" }}>
             <div className="logo-container">
                 <Image src="/desalert-logo.svg" width={500} height={200}></Image>
             </div>

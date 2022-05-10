@@ -3,6 +3,7 @@ body {
   color: "#DBF2FF";
   padding: 0;
   margin: 0;
+  overflow-x: hidden;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   width: 100%;
@@ -27,42 +28,147 @@ a {
   justify-content: center;
 }
 
-.texto-header {
-  font-size: 3.5rem;
-  max-width: 110rem;
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .texto-header {
+        font-size: 2rem;
+        max-width: 110rem;
+      } 
+      
+      .fondo-header-opciones {
+        background: #84b6f4;
+        min-width: 100%;
+        padding: 2rem 2rem 10rem 2rem;
+      }
+      
+      .degradado-azul-blanco {
+        background-image: linear-gradient(to bottom, #84b6f4, #95c6f7, #aad5f9, #c1e4fc, #dbf2ff);
+        min-width: 100%;
+        height: 5rem;
+      }
+
+      .card-opcion {
+        border-radius: 50px;
+        background-color: #DBF2FF;
+        box-shadow: 20px 20px 60px #baced9,
+          -20px -20px 60px #fcffff;
+        width: 30rem;
+        height: 30rem;
+        padding-top: 2rem;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        margin-left: 3rem;
+        margin-right: 3rem;
+      }
+
+      .boton-opcion {
+        height: 4rem;
+        width: 15rem;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #84b6f4;
+        border-width: 0.2rem;
+        border-color: #02121b;
+        font-size: 1rem;
+      }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .texto-header {
+        font-size: 3rem;
+        max-width: 110rem;
+      } 
+      
+      .fondo-header-opciones {
+        background: #84b6f4;
+        min-width: 100%;
+        padding: 2rem 2rem 10rem 2rem;
+      }
+      
+      .degradado-azul-blanco {
+        background-image: linear-gradient(to bottom, #84b6f4, #95c6f7, #aad5f9, #c1e4fc, #dbf2ff);
+        min-width: 100%;
+        height: 10rem;
+      }
+
+      .card-opcion {
+        border-radius: 50px;
+        background-color: #DBF2FF;
+        box-shadow: 20px 20px 60px #baced9,
+          -20px -20px 60px #fcffff;
+        width: 30rem;
+        height: 35rem;
+        padding-top: 2rem;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        margin-left: 3rem;
+        margin-right: 3rem;
+      }
+
+      .boton-opcion {
+        height: 4rem;
+        width: 15rem;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #84b6f4;
+        border-width: 0.2rem;
+        border-color: #02121b;
+        font-size: 1.3rem;
+      }
 } 
 
-.fondo-header-opciones {
-  background: #84b6f4;
-  min-width: 100%;
-}
+/* Medium devices (landscape tablets, 768px and up) 
+@media only screen and (min-width: 768px) {
+    .texto-header {
+        font-size: 2rem;
+        max-width: 110rem;
+      } 
+      
+      .fondo-header-opciones {
+        background: #84b6f4;
+        min-width: 100%;
+        padding: 2rem 2rem 10rem 2rem;
+      }
+      
+      .degradado-azul-blanco {
+        background-image: linear-gradient(to bottom, #84b6f4, #95c6f7, #aad5f9, #c1e4fc, #dbf2ff);
+        min-width: 100%;
+        height: 5rem;
+      }
 
-.degradado-azul-blanco {
-  background-image: linear-gradient(to bottom, #84b6f4, #95c6f7, #aad5f9, #c1e4fc, #dbf2ff);
-  min-width: 100%;
-  height: 5rem;
-}
+      .card-opcion {
+        border-radius: 50px;
+        background-color: #DBF2FF;
+        box-shadow: 20px 20px 60px #baced9,
+          -20px -20px 60px #fcffff;
+        width: 30rem;
+        height: 30rem;
+        padding-top: 2rem;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        margin-left: 3rem;
+        margin-right: 3rem;
+      }
+
+      .boton-opcion {
+        height: 4rem;
+        width: 15rem;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #84b6f4;
+        border-width: 0.2rem;
+        border-color: #02121b;
+        font-size: 1rem;
+      }
+} */
+
 
 .opciones {
   display: flex;
   justify-content: space-evenly;
   min-width: 100%;
-}
-
-.card-opcion {
-  border-radius: 50px;
-  background: #DBF2FF;
-  box-shadow: 20px 20px 60px #baced9,
-    -20px -20px 60px #fcffff;
-  min-height: 35rem;
-  min-width: 30rem;
-  width: 50rem;
-  width: 40rem;
-  padding-top: 2rem;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-  margin-left: 3rem;
-  margin-right: 3rem;
+  padding-bottom: 5rem;
 }
 
 .opcion {
@@ -71,17 +177,17 @@ a {
   align-items: center;
 }
 
-.boton-opcion {
-  height: 4rem;
-  width: 15rem;
-  margin-left: auto;
-  margin-right: auto;
+.boton-opcion:hover {
+    background-color: #DBF2FF;
+    border-color: #84b6f4;
 }
 
 .texto-opciones {
   display: flex;
   justify-content: center;
   margin-top: 2rem;
+  padding: 0 2rem 0 2rem;
+  margin-bottom: 3rem;
 }
 
 .fondo-opciones {
