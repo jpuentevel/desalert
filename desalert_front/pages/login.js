@@ -1,7 +1,10 @@
-export default function Login() {
-    return (
-      <>
-        <div>Tamo en login nojoda</div>
-      </>
-    )
-  }
+import Login from "../components/login/Login";
+
+
+export default function login() {
+  return (
+    <>
+      <Login/>
+    </>
+  );
+}
