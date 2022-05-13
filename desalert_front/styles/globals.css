@@ -239,9 +239,15 @@ a {
     border-radius: 50px;
     background-color: #dbf2ff;
     width: 25rem;
-    height: 49rem;
+    height: 52rem;
     padding: 3rem;
     margin: 0 2rem 0 2rem;
+  }
+
+  .label-login-back {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
   }
 }
 
@@ -251,9 +257,15 @@ a {
     border-radius: 50px;
     background-color: #dbf2ff;
     width: 30rem;
-    height: 50rem;
+    height: 53rem;
     padding: 3rem;
     margin: 0 2rem 0 2rem;
+  }
+
+  .label-login-back {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
   }
 }
 
@@ -263,9 +275,15 @@ a {
     border-radius: 50px;
     background-color: #dbf2ff;
     width: 33rem;
-    height: 55rem;
+    height: 56rem;
     padding: 3rem;
     margin: 0 2rem 0 2rem;
+  }
+
+  .label-login-back {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
   }
 }
 
@@ -275,9 +293,15 @@ a {
     border-radius: 50px;
     background-color: #dbf2ff;
     width: 55rem;
-    height: 35rem;
+    height: 37rem;
     padding: 3rem;
     margin: 0 2rem 0 2rem;
+  }
+
+  .label-login-back {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
   }
 }
 
@@ -290,6 +314,12 @@ a {
     height: 40rem;
     padding: 3rem;
     margin: 0 2rem 0 2rem;
+  }
+
+  .label-login-back {
+    display: flex;
+    justify-content: center;
+    margin-top: -1.5rem;
   }
 }
 
@@ -322,9 +352,4 @@ a {
   color: #02121b;
   border-width: 0.1rem;
   border-color: #84b6f4;
-}
-
-.label-login-back {
-  display: flex;
-  justify-content: center;
 }
