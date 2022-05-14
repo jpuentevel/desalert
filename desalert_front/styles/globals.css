@@ -231,6 +231,7 @@ a {
   background-color: #84b6f4;
   display: flex;
   justify-content: center;
+  padding-bottom: 4rem;
 }
 
 /* Extra small devices (phones, 600px and down) */
@@ -245,6 +246,21 @@ a {
   }
 
   .label-login-back {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .area-registro-medico {
+    border-radius: 50px;
+    background-color: #dbf2ff;
+    width: 25rem;
+    height: 67rem;
+    padding: 3rem;
+    margin: 0 2rem 0 2rem;
+  }
+
+  .label-registro-medico-back {
     display: flex;
     justify-content: center;
     margin-top: 1rem;
@@ -267,6 +283,21 @@ a {
     justify-content: center;
     margin-top: 1.5rem;
   }
+
+  .area-registro-medico {
+    border-radius: 50px;
+    background-color: #dbf2ff;
+    width: 33rem;
+    height: 67rem;
+    padding: 3rem;
+    margin: 0 2rem 0 2rem;
+  }
+
+  .label-registro-medico-back {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -274,8 +305,8 @@ a {
   .area-login {
     border-radius: 50px;
     background-color: #dbf2ff;
-    width: 33rem;
-    height: 56rem;
+    width: 40rem;
+    height: 62rem;
     padding: 3rem;
     margin: 0 2rem 0 2rem;
   }
@@ -284,6 +315,21 @@ a {
     display: flex;
     justify-content: center;
     margin-top: 1.5rem;
+  }
+
+  .area-registro-medico {
+    border-radius: 50px;
+    background-color: #dbf2ff;
+    width: 35rem;
+    height: 68rem;
+    padding: 3rem;
+    margin: 0 2rem 0 2rem;
+  }
+
+  .label-registro-medico-back {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
   }
 }
 
@@ -302,6 +348,25 @@ a {
     display: flex;
     justify-content: center;
     margin-top: 1.5rem;
+  }
+
+  .area-registro-medico {
+    border-radius: 50px;
+    background-color: #dbf2ff;
+    width: 55rem;
+    height: 46rem;
+    padding: 3rem;
+    margin: 0 2rem 0 2rem;
+  }
+
+  .label-registro-medico-back {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .padding-genero {
+      padding-top: 2rem;
   }
 }
 
@@ -345,6 +410,9 @@ a {
   color: #02121b;
   border-width: 0.1rem;
   border-color: #02121b;
+  max-width: 15rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .boton-login:hover {

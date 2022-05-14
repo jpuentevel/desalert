@@ -1,18 +1,14 @@
 import Link from "next/link";
 import React from "react";
 
-const FormRegistroMedico = () => {
-  let hoy = new Date();
-  let fechaHoy =
-    hoy.getFullYear() + "-" + (hoy.getMonth() + 1) + "-" + hoy.getDate();
-
+const FormRegistroAuxiliar = () => {
   return (
     <>
       <form className="row">
         <div className="col col-lg-6 col-sm-12">
           <div className="mb-3">
             <label
-              htmlFor="inputRegistroMedicoNombre"
+              htmlFor="inputRegistroAuxiliarNombre"
               className="form-label text fs-4"
             >
               Nombre
@@ -20,13 +16,13 @@ const FormRegistroMedico = () => {
             <input
               type="text"
               className="form-control"
-              id="inputRegistroMedicoNombre"
-              name="inputRegistroMedicoNombre"
+              id="inputRegistroAuxiliarNombre"
+              name="inputRegistroAuxiliarNombre"
             />
           </div>
           <div className="mb-3">
             <label
-              htmlFor="inputMedicoRegistroID"
+              htmlFor="inputAuxiliarRegistroID"
               className="form-label text fs-4"
             >
               Cédula de Ciudadanía
@@ -34,13 +30,13 @@ const FormRegistroMedico = () => {
             <input
               type="number"
               className="form-control"
-              id="inputMedicoRegistroID"
-              name="inputMedicoRegistroID"
+              id="inputAuxiliarRegistroID"
+              name="inputAuxiliarRegistroID"
             />
           </div>
           <div className="mb-3">
             <label
-              htmlFor="inputRegistroMedicoEmail"
+              htmlFor="inputRegistroAuxiliarEmail"
               className="form-label text fs-4"
             >
               Email
@@ -48,13 +44,13 @@ const FormRegistroMedico = () => {
             <input
               type="email"
               className="form-control"
-              id="inputRegistroMedicoEmail"
-              name="inputRegistroMedicoEmail"
+              id="inputRegistroAuxiliarEmail"
+              name="inputRegistroAuxiliarEmail"
             />
           </div>
           <div className="mb-3">
             <label
-              htmlFor="inputRegistroMedicoTelefono"
+              htmlFor="inputRegistroAuxiliarTelefono"
               className="form-label text fs-4"
             >
               Número de teléfono
@@ -62,22 +58,8 @@ const FormRegistroMedico = () => {
             <input
               type="number"
               className="form-control"
-              id="inputRegistroMedicoTelefono"
-              name="inputRegistroMedicoTelefono"
-            />
-          </div>
-          <div className="mb-3">
-            <label
-              htmlFor="inputRegistroMedicoDireccion"
-              className="form-label text fs-4"
-            >
-              Dirección
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="inputRegistroMedicoDireccion"
-              name="inputRegistroMedicoDireccion"
+              id="inputRegistroAuxiliarTelefono"
+              name="inputRegistroAuxiliarTelefono"
             />
           </div>
         </div>
@@ -85,21 +67,21 @@ const FormRegistroMedico = () => {
         <div className="col col-lg-6 col-sm-12">
           <div className="mb-3">
             <label
-              htmlFor="inputRegistroMedicoEspecialidad"
+              htmlFor="inputRegistroAuxiliarDireccion"
               className="form-label text fs-4"
             >
-              Especialidad
+              Dirección
             </label>
             <input
               type="text"
               className="form-control"
-              id="inputRegistroMedicoEspecialidad"
-              name="inputRegistroMedicoEspecialidad"
+              id="inputRegistroAuxiliarDireccion"
+              name="inputRegistroAuxiliarDireccion"
             />
           </div>
           <div className="mb-3">
             <label
-              htmlFor="inputRegistroMedicoPassword"
+              htmlFor="inputRegistroAuxiliarPassword"
               className="form-label text fs-4"
             >
               Contraseña
@@ -107,18 +89,18 @@ const FormRegistroMedico = () => {
             <input
               type="password"
               className="form-control"
-              id="inputRegistroMedicoPassword"
-              name="inputRegistroMedicoPassword"
+              id="inputRegistroAuxiliarPassword"
+              name="inputRegistroAuxiliarPassword"
             />
           </div>
           <div class="input-group mb-3 padding-genero">
             <label
               class="input-group-text text fs-4"
-              for="inputRegistroMedicoGenero"
+              for="inputRegistroAuxiliarGenero"
             >
               Género
             </label>
-            <select class="form-select" id="inputRegistroMedicoGenero">
+            <select class="form-select" id="inputRegistroAuxiliarGenero">
               <option className="text fs-4" value="otro">
                 Otro
               </option>
@@ -132,7 +114,7 @@ const FormRegistroMedico = () => {
           </div>
           <div className="mb-3">
             <label
-              htmlFor="inputRegistroMedicoFechaNacimiento"
+              htmlFor="inputRegistroAuxiliarFechaNacimiento"
               className="form-label text fs-4"
             >
               Fecha de nacimiento
@@ -140,8 +122,8 @@ const FormRegistroMedico = () => {
             <input
               type="date"
               className="form-control fs-4"
-              id="inputRegistroMedicoFechaNacimiento"
-              name="inputRegistroMedicoFechaNacimiento"
+              id="inputRegistroAuxiliarFechaNacimiento"
+              name="inputRegistroAuxiliarFechaNacimiento"
             />
           </div>
         </div>
@@ -156,4 +138,4 @@ const FormRegistroMedico = () => {
   );
 };
 
-export default FormRegistroMedico;
+export default FormRegistroAuxiliar;
