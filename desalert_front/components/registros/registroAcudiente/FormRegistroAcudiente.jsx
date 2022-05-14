@@ -93,14 +93,14 @@ const FormRegistroAcudiente = () => {
               name="inputRegistroAcudientePassword"
             />
           </div>
-          <div class="input-group mb-3 padding-genero">
+          <div className="input-group mb-3 padding-genero">
             <label
-              class="input-group-text text fs-4"
-              for="inputRegistroAcudienteGenero"
+              className="input-group-text text fs-4"
+              htmlFor="inputRegistroAcudienteGenero"
             >
               Género
             </label>
-            <select class="form-select" id="inputRegistroAcudienteGenero">
+            <select className="form-select" id="inputRegistroAcudienteGenero">
               <option className="text fs-4" value="otro">
                 Otro
               </option>
@@ -128,7 +128,7 @@ const FormRegistroAcudiente = () => {
           </div>
         </div>
 
-        <Link href="/home">
+        <Link href="/home" passHref>
           <button type="submit" className="btn boton-login mt-3 text fs-5">
             Registrarse
           </button>
