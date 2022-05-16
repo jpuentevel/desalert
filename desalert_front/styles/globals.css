@@ -4,8 +4,7 @@ body {
   padding: 0;
   margin: 0;
   overflow-x: hidden;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   width: 100%;
 }
 
@@ -29,7 +28,7 @@ a {
 }
 
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width:600px) {
   .texto-header {
     font-size: 2rem;
     max-width: 110rem;
@@ -44,16 +43,9 @@ a {
   }
 
   .degradado-azul-blanco {
-    background-image: linear-gradient(
-      to bottom,
-      #84b6f4,
-      #95c6f7,
-      #aad5f9,
-      #c1e4fc,
-      #dbf2ff
-    );
+    background-image: linear-gradient(to bottom, #84b6f4, #95c6f7, #aad5f9, #c1e4fc, #dbf2ff);
     min-width: 100%;
-    height: 5rem;
+    height: 3rem;
   }
 
   .card-opcion {
@@ -79,10 +71,11 @@ a {
     border-color: #02121b;
     font-size: 1rem;
   }
+
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width:600px) {
   .texto-header {
     font-size: 3rem;
     max-width: 110rem;
@@ -97,14 +90,7 @@ a {
   }
 
   .degradado-azul-blanco {
-    background-image: linear-gradient(
-      to bottom,
-      #84b6f4,
-      #95c6f7,
-      #aad5f9,
-      #c1e4fc,
-      #dbf2ff
-    );
+    background-image: linear-gradient(to bottom, #84b6f4, #95c6f7, #aad5f9, #c1e4fc, #dbf2ff);
     min-width: 100%;
     height: 10rem;
   }
@@ -132,10 +118,11 @@ a {
     border-color: #02121b;
     font-size: 1.3rem;
   }
+
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width:768px) {
   .texto-header {
     font-size: 3.5rem;
     max-width: 70rem;
@@ -150,14 +137,7 @@ a {
   }
 
   .degradado-azul-blanco {
-    background-image: linear-gradient(
-      to bottom,
-      #84b6f4,
-      #95c6f7,
-      #aad5f9,
-      #c1e4fc,
-      #dbf2ff
-    );
+    background-image: linear-gradient(to bottom, #84b6f4, #95c6f7, #aad5f9, #c1e4fc, #dbf2ff);
     min-width: 100%;
     height: 7rem;
   }
@@ -191,6 +171,7 @@ a {
     border-color: #02121b;
     font-size: 1.2rem;
   }
+
 }
 
 .opciones {
@@ -235,7 +216,7 @@ a {
 }
 
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width:600px) {
   .area-login {
     border-radius: 50px;
     background-color: #dbf2ff;
@@ -265,10 +246,11 @@ a {
     justify-content: center;
     margin-top: 1rem;
   }
+
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width:600px) {
   .area-login {
     border-radius: 50px;
     background-color: #dbf2ff;
@@ -298,10 +280,11 @@ a {
     justify-content: center;
     margin-top: 1rem;
   }
+
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width:768px) {
   .area-login {
     border-radius: 50px;
     background-color: #dbf2ff;
@@ -331,10 +314,11 @@ a {
     justify-content: center;
     margin-top: 1rem;
   }
+
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width:992px) {
   .area-login {
     border-radius: 50px;
     background-color: #dbf2ff;
@@ -366,12 +350,13 @@ a {
   }
 
   .padding-genero {
-      padding-top: 2rem;
+    padding-top: 2rem;
   }
+
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width:1200px) {
   .area-login {
     border-radius: 50px;
     background-color: #dbf2ff;
@@ -386,6 +371,7 @@ a {
     justify-content: center;
     margin-top: -1.5rem;
   }
+
 }
 
 .imagen-login {
@@ -416,8 +402,45 @@ a {
 }
 
 .boton-login:hover {
-  background-color: #dbf2ff;;
+  background-color: #dbf2ff;
   color: #02121b;
   border-width: 0.1rem;
   border-color: #84b6f4;
+}
+
+.body-home {
+  height: 100%;
+  width: 100vw;
+  background-color: #dbf2ff;
+  padding: 3rem;
+}
+
+.contenedor-infantes {
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border-width: 0.2rem;
+  border-color: #84b6f4;
+  border-style: solid;
+  width: auto;
+  margin-top: 2rem;
+}
+
+.grid-infantes {
+  display: grid;
+  gap: 1rem;
+  grid-auto-columns: 25rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 25rem), 1fr));
+  grid-auto-flow: dense;
+}
+
+.card-infante {
+  border-radius: 1rem;
+  margin: 0.8rem;
+  background-color: #dbf2ff;
+  border-width: 0.2rem;
+  border-color: #84b6f4;
+  box-shadow: 20px 20px 60px #baced9, -20px -20px 60px #fcffff;
+  background-color: #dbf2ff;
+  grid-column: span 2;
+  min-height: 25rem;
 }

@@ -1,11 +1,15 @@
+import Image from "next/image";
+import Link from "next/link";
 import React from "react";
+import HeaderHome from "../HeaderHome";
+import BodyHomeMedico from "./BodyHomeMedico";
 
 const HomeMedico = () => {
   return (
     <>
-      <div>
-        <p className="text fs-1">DURO EN MEDICO</p>
-      </div>
+        <HeaderHome/>
+        <div className="degradado-azul-blanco"></div>
+        <BodyHomeMedico/>
     </>
   );
 };
