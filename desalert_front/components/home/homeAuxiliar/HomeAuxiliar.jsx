@@ -1,10 +1,14 @@
 import React from "react";
+import HeaderHome from "../HeaderHome";
+import BodyHomeAuxiliar from "./BodyHomeAuxiliar";
 
 const HomeAuxiliar = () => {
   return (
     <>
       <div>
-        <p className="text fs-1">DURO EN AUXILIAR</p>
+        <HeaderHome />
+        <div className="degradado-azul-blanco"></div>
+        <BodyHomeAuxiliar />
       </div>
     </>
   );

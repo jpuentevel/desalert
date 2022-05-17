@@ -425,14 +425,6 @@ a {
   margin-top: 2rem;
 }
 
-.grid-infantes {
-  display: grid;
-  gap: 1rem;
-  grid-auto-columns: 25rem;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 25rem), 1fr));
-  grid-auto-flow: dense;
-}
-
 .card-infante {
   border-radius: 1rem;
   margin: 0.8rem;
@@ -441,6 +433,12 @@ a {
   border-color: #84b6f4;
   box-shadow: 20px 20px 60px #baced9, -20px -20px 60px #fcffff;
   background-color: #dbf2ff;
-  grid-column: span 2;
-  min-height: 25rem;
+  min-height: 20rem;
+  min-width: 20rem;
+}
+
+.barra-busqueda {
+  max-width: 50rem;
+  margin-left: auto;
+  margin-right: auto;
 }

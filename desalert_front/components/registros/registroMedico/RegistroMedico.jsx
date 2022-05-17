@@ -8,7 +8,9 @@ const RegistroMedico = () => {
     <>
       <div className="fondo-login row">
         <div className="logo-container">
-          <Image src="/desalert-logo.svg" width={500} height={200}></Image>
+          <Link href="/" passHref>
+            <Image src="/desalert-logo.svg" width={500} height={200}></Image>
+          </Link>
         </div>
         <div className="area-registro-medico">
           <div className="container-titulo-login">

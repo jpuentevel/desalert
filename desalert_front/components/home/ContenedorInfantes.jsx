@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import CardInfante from "../cardInfante/CardInfante";
+import CardInfante from "./cardInfante/CardInfante";
 
-const ContenedorInfantesAtendidos = () => {
-  const [atendidos, setAtendidos] = useState([]);
+const ContenedorInfantes = () => {
+  const [infantes, setInfantes] = useState([]);
   const [filtrados, setFiltrados] = useState([]);
   const [busqueda, setBusqueda] = useState("");
 
@@ -10,7 +10,7 @@ const ContenedorInfantesAtendidos = () => {
     fetch("https://rickandmortyapi.com/api/character/?page=41")
       .then((response) => response.json())
       .then((item) => {
-        setAtendidos(item.results);
+        setInfantes(item.results);
         setFiltrados(item.results);
       });
   }, []);
@@ -35,14 +35,13 @@ const ContenedorInfantesAtendidos = () => {
         return elemento;
       }
     });
-    setAtendidos(resultadoBusqueda);
+    setInfantes(resultadoBusqueda);
   };
 
   return (
     <>
-      <div className="contenedor-infantes">
-        <p className="text fs-2 fw-bold">Infantes atendidos</p>
-        <div className="input-group mb-3 barra-busqueda">
+      <div className="">
+      <div className="input-group mb-3 barra-busqueda">
           <span className="input-group-text fs-4">Buscar</span>
           <input
             className="form-control form-control-lg"
@@ -53,7 +52,7 @@ const ContenedorInfantesAtendidos = () => {
           />
         </div>
         <div className="row">
-          {atendidos.map((item) => (
+          {infantes.map((item) => (
             <div className="col" key={item.id}>
               <CardInfante
                 imagen={item.image}
@@ -70,4 +69,4 @@ const ContenedorInfantesAtendidos = () => {
   );
 };
 
-export default ContenedorInfantesAtendidos;
+export default ContenedorInfantes;

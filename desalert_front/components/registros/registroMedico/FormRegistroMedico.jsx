@@ -142,6 +142,8 @@ const FormRegistroMedico = () => {
               className="form-control fs-4"
               id="inputRegistroMedicoFechaNacimiento"
               name="inputRegistroMedicoFechaNacimiento"
+              min="1900-01-01"
+              max={fechaHoy}
             />
           </div>
         </div>

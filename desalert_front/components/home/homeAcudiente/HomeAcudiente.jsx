@@ -1,10 +1,14 @@
 import React from "react";
+import HeaderHome from "../HeaderHome";
+import BodyHomeAcudiente from "./BodyHomeAcudiente";
 
 const HomeAcudiente = () => {
   return (
     <>
       <div>
-        <p className="text fs-1">DURO EN ACUDIENTE</p>
+        <HeaderHome />
+        <div className="degradado-azul-blanco"></div>
+        <BodyHomeAcudiente />
       </div>
     </>
   );
