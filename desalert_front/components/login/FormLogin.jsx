@@ -29,7 +29,11 @@ const FormLogin = () => {
             className="form-control"
             id="inputloginID"
             value={usuarioInput}
-            onChange={(e) => setUsusarioInput(e.target.value)}
+            onChange={(e) => {
+              setUsusarioInput(e.target.value)
+              setUsuario(usuarioInput);
+              console.log("usuario: " + usuario);
+            }}
           />
         </div>
         <div className="mb-3">
@@ -41,7 +45,11 @@ const FormLogin = () => {
             className="form-control"
             id="inputLoginPassword"
             value={contrasenaInput}
-            onChange={(e) => setContrasenaInput(e.target.value)}
+            onChange={(e) => {
+              setContrasenaInput(e.target.value)
+              setContrasena(contrasenaInput);
+              console.log("contraseña: " + contrasena);
+            }}
           />
         </div>
         <div className="mb-3">
