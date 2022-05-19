@@ -433,8 +433,6 @@ a {
   border-color: #84b6f4;
   box-shadow: 20px 20px 60px #baced9, -20px -20px 60px #fcffff;
   background-color: #dbf2ff;
-  min-height: 20rem;
-  min-width: 20rem;
 }
 
 .barra-busqueda {
