@@ -1,20 +1,19 @@
-import Link from "next/link";
-import React, { useState } from "react";
-import { useLocalStorage } from "../utilidades/hooks/useLocalStorage";
+import Link from "next/link"
+import React, { useState } from "react"
+import { useLocalStorage } from "../utilidades/hooks/useLocalStorage"
 
 const FormLogin = () => {
+  const [usuarioInput, setUsusarioInput] = useState("")
+  const [contrasenaInput, setContrasenaInput] = useState("")
 
-  const [usuarioInput, setUsusarioInput] = useState("");
-  const [contrasenaInput, setContrasenaInput] = useState("");
-
-  const [usuario, setUsuario] = useLocalStorage("usuario", "");
-  const [contrasena, setContrasena] = useLocalStorage("contrasena", "");
+  const [usuario, setUsuario] = useLocalStorage("usuario", "")
+  const [contrasena, setContrasena] = useLocalStorage("contrasena", "")
 
   const handleLogin = (e) => {
-    e.preventDefault();
-    setUsuario(usuarioInput);
-    setContrasena(contrasenaInput);
-    console.log(usuario, contrasena);
+    e.preventDefault()
+    setUsuario(usuarioInput)
+    setContrasena(contrasenaInput)
+    console.log(usuario, contrasena)
   }
 
   return (
@@ -31,8 +30,8 @@ const FormLogin = () => {
             value={usuarioInput}
             onChange={(e) => {
               setUsusarioInput(e.target.value)
-              setUsuario(usuarioInput);
-              console.log("usuario: " + usuario);
+              setUsuario(usuarioInput)
+              console.log("usuario: " + usuario)
             }}
           />
         </div>
@@ -47,20 +46,25 @@ const FormLogin = () => {
             value={contrasenaInput}
             onChange={(e) => {
               setContrasenaInput(e.target.value)
-              setContrasena(contrasenaInput);
-              console.log("contraseña: " + contrasena);
+              setContrasena(contrasenaInput)
+              console.log("contraseña: " + contrasena)
             }}
           />
         </div>
         <div className="mb-3">
-            <label className="text fs-5">¿Olvidó su contraseña? Clic <Link href="#"><a>aquí</a></Link></label>
+          <label className="text fs-5">
+            ¿Olvidó su contraseña? Clic{" "}
+            <Link href="#">
+              <a>aquí</a>
+            </Link>
+          </label>
         </div>
         <button type="submit" className="btn boton-login text fs-5">
           Iniciar Sesión
         </button>
       </form>
     </>
-  );
-};
+  )
+}
 
-export default FormLogin;
+export default FormLogin
