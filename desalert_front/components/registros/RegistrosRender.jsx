@@ -1,27 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import RegistroAcudiente from "./registroAcudiente/RegistroAcudiente";
 import RegistroAuxiliar from "./registroAuxiliar/RegistroAuxiliar";
 import RegistroMedico from "./registroMedico/RegistroMedico";
-
-import { decision } from "../presentation/CardOpcion";
-
+import { decisionContext } from "components/presentation/CardOpcion";
 
 const RegistrosRender = () => {
 
+  const { decision } = useContext(decisionContext);
 
-  if (decision.o === "acudiente") {
+  if (decision === "acudiente") {
     return (
       <>
         <RegistroAcudiente />
       </>
     );
-  } else if (decision.o === "auxiliar") {
+  } else if (decision === "auxiliar") {
     return (
       <>
         <RegistroAuxiliar />
       </>
     );
-  } else if (decision.o === "medico") {
+  } else if (decision === "medico") {
     return (
       <>
         <RegistroMedico />

@@ -435,6 +435,11 @@ a {
   background-color: #dbf2ff;
 }
 
+.card-infante img {
+  width: 100%;
+  height: auto;
+}
+
 .barra-busqueda {
   max-width: 50rem;
   margin-left: auto;

@@ -2,10 +2,26 @@ import Link from "next/link";
 import React from "react";
 
 const FormRegistroInfante = () => {
+
+
+
   return (
     <>
       <form className="row">
         <div className="col col-lg-6 col-sm-12">
+          <div className="mb-3">
+            <label
+              htmlFor="inputRegistroInfanteImagen"
+              className="form-label text fs-4">
+              Imagen
+            </label>
+            <input
+              type="image"
+              className="form-control"
+              id="inputRegistroInfanteImagen"
+              name="inputRegistroInfanteImagen"
+            />
+          </div>
           <div className="mb-3">
             <label
               htmlFor="inputRegistroInfanteNombre"

@@ -1,15 +1,21 @@
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
-
-const decision = {
-  o: "",
-};
+import React, { useState, useContext, useEffect } from "react";
 
 const CardOpcion = (props) => {
-  const [opcion, setOpcion] = useState(null);
 
-  decision.o = opcion;
+  const [rol, setRol] = useLocalStorage("rol", "");
+
+  let rolContext;
+
+  useEffect(() => {
+    rolContext = localStorage.getItem("rol");
+  }, []);
+
+  let decisionContext = {
+    rol: createContext(rolContext)
+  }
+
 
   return (
     <>
@@ -22,7 +28,8 @@ const CardOpcion = (props) => {
             <Link href="/registro" passHref>
               <button
                 onClick={() => {
-                  setOpcion(props.opcion);
+                  setRol(props.opcion);
+                  console.log(rol);
                 }}
                 type="button"
                 className="btn mt-4 text fw-bold boton-opcion"
@@ -37,5 +44,5 @@ const CardOpcion = (props) => {
   );
 };
 
+export {decisionContext};
 export default CardOpcion;
-export { decision };
