@@ -1,12 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import RegistroAcudiente from "./registroAcudiente/RegistroAcudiente";
 import RegistroAuxiliar from "./registroAuxiliar/RegistroAuxiliar";
 import RegistroMedico from "./registroMedico/RegistroMedico";
-import { decisionContext } from "components/presentation/CardOpcion";
+import { rolContext, rolContextProvider } from "../utilidades/contexts/Rol/rolContext"
 
 const RegistrosRender = () => {
 
-  const { decision } = useContext(decisionContext);
+    const decision = useContext(rolContext)
 
   if (decision === "acudiente") {
     return (
@@ -30,7 +30,7 @@ const RegistrosRender = () => {
     return (
       <>
         <div>
-          <p className="text fs-1">ERROR</p>
+          <p className="text fs-1">{decision}</p>
         </div>
       </>
     );

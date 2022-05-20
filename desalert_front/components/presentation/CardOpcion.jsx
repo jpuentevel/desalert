@@ -1,21 +1,12 @@
+import { useLocalStorage } from "components/utilidades/hooks/useLocalStorage";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState, useContext, useEffect } from "react";
 
+
 const CardOpcion = (props) => {
 
   const [rol, setRol] = useLocalStorage("rol", "");
-
-  let rolContext;
-
-  useEffect(() => {
-    rolContext = localStorage.getItem("rol");
-  }, []);
-
-  let decisionContext = {
-    rol: createContext(rolContext)
-  }
-
 
   return (
     <>
@@ -44,5 +35,4 @@ const CardOpcion = (props) => {
   );
 };
 
-export {decisionContext};
 export default CardOpcion;
