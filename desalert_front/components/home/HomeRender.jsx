@@ -1,23 +1,25 @@
 import React from "react";
-import { decision } from "../presentation/CardOpcion";
 import HomeAcudiente from "./homeAcudiente/HomeAcudiente";
 import HomeAuxiliar from "./homeAuxiliar/HomeAuxiliar";
 import HomeMedico from "./homeMedico/HomeMedico";
 
 const HomeRender = () => {
-  if (decision.o === "acudiente") {
+
+  const { rol } = useRol();
+
+  if (rol.localeCompare("acudiente")) {
     return (
       <>
         <HomeAcudiente />
       </>
     );
-  } else if (decision.o === "auxiliar") {
+  } else if (rol.localeCompare("auxiliar")) {
     return (
       <>
         <HomeAuxiliar />
       </>
     );
-  } else if (decision.o === "medico") {
+  } else if (rol.localeCompare("medico")) {
     return (
       <>
         <HomeMedico />

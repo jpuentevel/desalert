@@ -2,25 +2,25 @@ import React, { useContext, useEffect } from "react";
 import RegistroAcudiente from "./registroAcudiente/RegistroAcudiente";
 import RegistroAuxiliar from "./registroAuxiliar/RegistroAuxiliar";
 import RegistroMedico from "./registroMedico/RegistroMedico";
-import { rolContext, rolContextProvider } from "../utilidades/contexts/Rol/rolContext"
+import useRol from "components/utilidades/hooks/useRol";
 
 const RegistrosRender = () => {
 
-    const decision = useContext(rolContext)
+  const { rol } = useRol();
 
-  if (decision === "acudiente") {
+  if (rol.localeCompare("acudiente")) {
     return (
       <>
         <RegistroAcudiente />
       </>
     );
-  } else if (decision === "auxiliar") {
+  } else if (rol.localeCompare("auxiliar")) {
     return (
       <>
         <RegistroAuxiliar />
       </>
     );
-  } else if (decision === "medico") {
+  } else if (rol.localeCompare("medico")) {
     return (
       <>
         <RegistroMedico />
@@ -30,7 +30,7 @@ const RegistrosRender = () => {
     return (
       <>
         <div>
-          <p className="text fs-1">{decision}</p>
+          <p className="text fs-1">Error {rol}</p>
         </div>
       </>
     );
