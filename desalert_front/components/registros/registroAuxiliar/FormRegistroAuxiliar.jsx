@@ -1,7 +1,36 @@
-import Link from "next/link";
-import React from "react";
+import Link from "next/link"
+import React from "react"
 
 const FormRegistroAuxiliar = () => {
+  const [AuxiliarNombre, setAuxiliarNombre] = useState("")
+  const [AuxiliarID, setAuxiliarID] = useState("")
+  const [AuxiliarEmail, setAuxiliarEmail] = useState("")
+  const [AuxiliarTelefono, setAuxiliarTelefono] = useState("")
+  const [AuxiliarDireccion, setAuxiliarDireccion] = useState("")
+  const [AuxiliarPassword, setAuxiliarPassword] = useState("")
+  const [AuxiliarGenero, setAuxiliarGenero] = useState("")
+  const [AuxiliarFechaNacimiento, setAuxiliarFechaNacimiento] = useState("")
+
+  const handleSubmitAuxiliar = e => {
+    e.preventDefault();
+    const urlAuxiliar="";
+    const dataAuxiliar = {}
+
+    await fetch(urlAuxiliar, {
+        method: "POST",
+        body: JSON.stringify(dataAuxiliar),
+        headers: {
+          "Accept": "application.json",
+          "Contente-Type": "application/json"
+        }
+      }).then(res => res.json())
+      .catch(error => console.error("Error: ", error))
+      .then(response => console.log("Succes: ", response));
+  
+      const urlUsuario = ""
+      const dataUsuario = {}
+  }
+
   return (
     <>
       <form className="row">
@@ -18,6 +47,8 @@ const FormRegistroAuxiliar = () => {
               className="form-control"
               id="inputRegistroAuxiliarNombre"
               name="inputRegistroAuxiliarNombre"
+              value={AuxiliarNombre}
+              onChange={(e) => {setAuxiliarNombre(e.target.value)}}
             />
           </div>
           <div className="mb-3">
@@ -32,6 +63,8 @@ const FormRegistroAuxiliar = () => {
               className="form-control"
               id="inputAuxiliarRegistroID"
               name="inputAuxiliarRegistroID"
+              value={AuxiliarID}
+              onChange={(e) => {setAuxiliarID(e.target.value)}}
             />
           </div>
           <div className="mb-3">
@@ -46,6 +79,8 @@ const FormRegistroAuxiliar = () => {
               className="form-control"
               id="inputRegistroAuxiliarEmail"
               name="inputRegistroAuxiliarEmail"
+              value={AuxiliarEmail}
+              onChange={(e) => {setAuxiliarEmail(e.target.value)}}
             />
           </div>
           <div className="mb-3">
@@ -60,6 +95,8 @@ const FormRegistroAuxiliar = () => {
               className="form-control"
               id="inputRegistroAuxiliarTelefono"
               name="inputRegistroAuxiliarTelefono"
+              value={AuxiliarTelefono}
+              onChange={(e) => {setAuxiliarTelefono(e.target.value)}}
             />
           </div>
         </div>
@@ -77,6 +114,8 @@ const FormRegistroAuxiliar = () => {
               className="form-control"
               id="inputRegistroAuxiliarDireccion"
               name="inputRegistroAuxiliarDireccion"
+              value={AuxiliarDireccion}
+              onChange={(e) => {setAuxiliarDireccion(e.target.value)}}
             />
           </div>
           <div className="mb-3">
@@ -91,6 +130,8 @@ const FormRegistroAuxiliar = () => {
               className="form-control"
               id="inputRegistroAuxiliarPassword"
               name="inputRegistroAuxiliarPassword"
+              value={AuxiliarPassword}
+              onChange={(e) => {setAuxiliarPassword(e.target.value)}}
             />
           </div>
           <div className="input-group mb-3 padding-genero">
@@ -100,7 +141,7 @@ const FormRegistroAuxiliar = () => {
             >
               Género
             </label>
-            <select className="form-select" id="inputRegistroAuxiliarGenero">
+            <select className="form-select" id="inputRegistroAuxiliarGenero" value={AuxiliarGenero} onChange={(e) => {setAuxiliarGenero(e.target.value)}}>
               <option className="text fs-4" value="otro">
                 Otro
               </option>
@@ -124,6 +165,8 @@ const FormRegistroAuxiliar = () => {
               className="form-control fs-4"
               id="inputRegistroAuxiliarFechaNacimiento"
               name="inputRegistroAuxiliarFechaNacimiento"
+              value={AuxiliarFechaNacimiento}
+              onChange={(e) => {setAuxiliarFechaNacimiento(e.target.value)}}
             />
           </div>
         </div>
@@ -135,7 +178,7 @@ const FormRegistroAuxiliar = () => {
         </Link>
       </form>
     </>
-  );
-};
+  )
+}
 
-export default FormRegistroAuxiliar;
+export default FormRegistroAuxiliar
