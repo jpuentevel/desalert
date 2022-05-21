@@ -1,5 +1,5 @@
 import Link from "next/link"
-import React from "react"
+import React, { useState } from "react"
 
 const FormRegistroAuxiliar = () => {
   const [AuxiliarNombre, setAuxiliarNombre] = useState("")
@@ -11,7 +11,7 @@ const FormRegistroAuxiliar = () => {
   const [AuxiliarGenero, setAuxiliarGenero] = useState("")
   const [AuxiliarFechaNacimiento, setAuxiliarFechaNacimiento] = useState("")
 
-  const handleSubmitAuxiliar = e => {
+  const handleSubmitAuxiliar = async (e) => {
     e.preventDefault();
     const urlAuxiliar="";
     const dataAuxiliar = {}
@@ -21,7 +21,7 @@ const FormRegistroAuxiliar = () => {
         body: JSON.stringify(dataAuxiliar),
         headers: {
           "Accept": "application.json",
-          "Contente-Type": "application/json"
+          "Content-Type": "application/json"
         }
       }).then(res => res.json())
       .catch(error => console.error("Error: ", error))

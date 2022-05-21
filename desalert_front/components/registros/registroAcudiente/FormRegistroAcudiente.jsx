@@ -13,7 +13,7 @@ const FormRegistroAcudiente = () => {
   const [AcudienteFechaNacimiento, setAcudienteFechaNacimiento] = useState("");
   const [AcudienteParentesco, setAcudienteParentesco] = useState("");
 
-  const handleSubmitAcudiente = async e => {
+  const handleSubmitAcudiente = async (e) => {
     e.preventDefault();
     const urlAcudiente="";
     const dataAcudiente = {
@@ -31,7 +31,7 @@ const FormRegistroAcudiente = () => {
       body: JSON.stringify(dataAcudiente),
       headers: {
         "Accept": "application.json",
-        "Contente-Type": "application/json"
+        "Content-Type": "application/json"
       }
     }).then(res => res.json())
     .catch(error => console.error("Error: ", error))

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 
 const FormRegistroMedico = () => {
 
@@ -13,7 +13,7 @@ const FormRegistroMedico = () => {
   const [MedicoFechaNacimiento, setMedicoFechaNacimiento] = useState("");
   const [MedicoEspecialidad, setMedicoEspecialidad] = useState("");
 
-  const handleSubmitMedico = e => {
+  const handleSubmitMedico = async (e) => {
     e.preventDefault();
     const urlMedico="";
     const dataMedico = {}
@@ -23,7 +23,7 @@ const FormRegistroMedico = () => {
         body: JSON.stringify(dataMedico),
         headers: {
           "Accept": "application.json",
-          "Contente-Type": "application/json"
+          "Content-Type": "application/json"
         }
       }).then(res => res.json())
       .catch(error => console.error("Error: ", error))
@@ -184,8 +184,6 @@ const FormRegistroMedico = () => {
               id="inputRegistroMedicoFechaNacimiento"
               name="inputRegistroMedicoFechaNacimiento"
               min="1900-01-01"
-              max={fechaHoy}
-              value={MedicoFechaNacimiento}
               onChange={(e) => {setMedicoFechaNacimiento(e.target.value)}}
             />
           </div>
