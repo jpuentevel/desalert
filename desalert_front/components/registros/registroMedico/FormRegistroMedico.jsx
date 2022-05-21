@@ -1,36 +1,36 @@
-import Link from "next/link";
-import React, { useState } from "react";
+import Link from "next/link"
+import React, { useState } from "react"
 
 const FormRegistroMedico = () => {
-
-  const [MedicoNombre, setMedicoNombre] = useState("");
-  const [MedicoID, setMedicoID] = useState("");
-  const [MedicoEmail, setMedicoEmail] = useState("");
-  const [MedicoTelefono, setMedicoTelefono] = useState("");
-  const [MedicoDireccion, setMedicoDireccion] = useState("");
-  const [MedicoPassword, setMedicoPassword] = useState("");
-  const [MedicoGenero, setMedicoGenero] = useState("");
-  const [MedicoFechaNacimiento, setMedicoFechaNacimiento] = useState("");
-  const [MedicoEspecialidad, setMedicoEspecialidad] = useState("");
+  const [MedicoNombre, setMedicoNombre] = useState("")
+  const [MedicoID, setMedicoID] = useState("")
+  const [MedicoEmail, setMedicoEmail] = useState("")
+  const [MedicoTelefono, setMedicoTelefono] = useState("")
+  const [MedicoDireccion, setMedicoDireccion] = useState("")
+  const [MedicoPassword, setMedicoPassword] = useState("")
+  const [MedicoGenero, setMedicoGenero] = useState("")
+  const [MedicoFechaNacimiento, setMedicoFechaNacimiento] = useState("")
+  const [MedicoEspecialidad, setMedicoEspecialidad] = useState("")
 
   const handleSubmitMedico = async (e) => {
-    e.preventDefault();
-    const urlMedico="";
+    e.preventDefault()
+    const urlMedico = ""
     const dataMedico = {}
 
     await fetch(urlMedico, {
-        method: "POST",
-        body: JSON.stringify(dataMedico),
-        headers: {
-          "Accept": "application.json",
-          "Content-Type": "application/json"
-        }
-      }).then(res => res.json())
-      .catch(error => console.error("Error: ", error))
-      .then(response => console.log("Succes: ", response));
-  
-      const urlUsuario = ""
-      const dataUsuario = {}
+      method: "POST",
+      body: JSON.stringify(dataMedico),
+      headers: {
+        Accept: "application.json",
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .catch((error) => console.error("Error: ", error))
+      .then((response) => console.log("Succes: ", response))
+
+    const urlUsuario = ""
+    const dataUsuario = {}
   }
 
   return (
@@ -50,7 +50,9 @@ const FormRegistroMedico = () => {
               id="inputRegistroMedicoNombre"
               name="inputRegistroMedicoNombre"
               value={MedicoNombre}
-              onChange={(e) => {setMedicoNombre(e.target.value)}}
+              onChange={(e) => {
+                setMedicoNombre(e.target.value)
+              }}
             />
           </div>
           <div className="mb-3">
@@ -66,7 +68,9 @@ const FormRegistroMedico = () => {
               id="inputMedicoRegistroID"
               name="inputMedicoRegistroID"
               value={MedicoID}
-              onChange={(e) => {setMedicoID(e.target.value)}}
+              onChange={(e) => {
+                setMedicoID(e.target.value)
+              }}
             />
           </div>
           <div className="mb-3">
@@ -82,7 +86,9 @@ const FormRegistroMedico = () => {
               id="inputRegistroMedicoEmail"
               name="inputRegistroMedicoEmail"
               value={MedicoEmail}
-              onChange={(e) => {setMedicoEmail(e.target.value)}}
+              onChange={(e) => {
+                setMedicoEmail(e.target.value)
+              }}
             />
           </div>
           <div className="mb-3">
@@ -98,7 +104,9 @@ const FormRegistroMedico = () => {
               id="inputRegistroMedicoTelefono"
               name="inputRegistroMedicoTelefono"
               value={MedicoTelefono}
-              onChange={(e) => {setMedicoTelefono(e.target.value)}}
+              onChange={(e) => {
+                setMedicoTelefono(e.target.value)
+              }}
             />
           </div>
           <div className="mb-3">
@@ -114,7 +122,9 @@ const FormRegistroMedico = () => {
               id="inputRegistroMedicoDireccion"
               name="inputRegistroMedicoDireccion"
               value={MedicoDireccion}
-              onChange={(e) => {setMedicoDireccion(e.target.value)}}
+              onChange={(e) => {
+                setMedicoDireccion(e.target.value)
+              }}
             />
           </div>
         </div>
@@ -133,7 +143,9 @@ const FormRegistroMedico = () => {
               id="inputRegistroMedicoEspecialidad"
               name="inputRegistroMedicoEspecialidad"
               value={MedicoEspecialidad}
-              onChange={(e) => {setMedicoEspecialidad(e.target.value)}}
+              onChange={(e) => {
+                setMedicoEspecialidad(e.target.value)
+              }}
             />
           </div>
           <div className="mb-3">
@@ -149,7 +161,9 @@ const FormRegistroMedico = () => {
               id="inputRegistroMedicoPassword"
               name="inputRegistroMedicoPassword"
               value={MedicoPassword}
-              onChange={(e) => {setMedicoPassword(e.target.value)}}
+              onChange={(e) => {
+                setMedicoPassword(e.target.value)
+              }}
             />
           </div>
           <div className="input-group mb-3 padding-genero">
@@ -159,7 +173,14 @@ const FormRegistroMedico = () => {
             >
               Género
             </label>
-            <select className="form-select" id="inputRegistroMedicoGenero" value={MedicoGenero} onChange={(e) => {setMedicoGenero(e.target.value)}}>
+            <select
+              className="form-select"
+              id="inputRegistroMedicoGenero"
+              value={MedicoGenero}
+              onChange={(e) => {
+                setMedicoGenero(e.target.value)
+              }}
+            >
               <option className="text fs-4" value="otro">
                 Otro
               </option>
@@ -184,7 +205,9 @@ const FormRegistroMedico = () => {
               id="inputRegistroMedicoFechaNacimiento"
               name="inputRegistroMedicoFechaNacimiento"
               min="1900-01-01"
-              onChange={(e) => {setMedicoFechaNacimiento(e.target.value)}}
+              onChange={(e) => {
+                setMedicoFechaNacimiento(e.target.value)
+              }}
             />
           </div>
         </div>
@@ -196,7 +219,7 @@ const FormRegistroMedico = () => {
         </Link>
       </form>
     </>
-  );
-};
+  )
+}
 
-export default FormRegistroMedico;
+export default FormRegistroMedico

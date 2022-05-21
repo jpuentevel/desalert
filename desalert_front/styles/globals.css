@@ -4,7 +4,8 @@ body {
   padding: 0;
   margin: 0;
   overflow-x: hidden;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   width: 100%;
 }
 
@@ -28,7 +29,7 @@ a {
 }
 
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width:600px) {
+@media only screen and (max-width: 600px) {
   .texto-header {
     font-size: 2rem;
     max-width: 110rem;
@@ -43,7 +44,14 @@ a {
   }
 
   .degradado-azul-blanco {
-    background-image: linear-gradient(to bottom, #84b6f4, #95c6f7, #aad5f9, #c1e4fc, #dbf2ff);
+    background-image: linear-gradient(
+      to bottom,
+      #84b6f4,
+      #95c6f7,
+      #aad5f9,
+      #c1e4fc,
+      #dbf2ff
+    );
     min-width: 100%;
     height: 3rem;
   }
@@ -71,11 +79,10 @@ a {
     border-color: #02121b;
     font-size: 1rem;
   }
-
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width:600px) {
+@media only screen and (min-width: 600px) {
   .texto-header {
     font-size: 3rem;
     max-width: 110rem;
@@ -90,7 +97,14 @@ a {
   }
 
   .degradado-azul-blanco {
-    background-image: linear-gradient(to bottom, #84b6f4, #95c6f7, #aad5f9, #c1e4fc, #dbf2ff);
+    background-image: linear-gradient(
+      to bottom,
+      #84b6f4,
+      #95c6f7,
+      #aad5f9,
+      #c1e4fc,
+      #dbf2ff
+    );
     min-width: 100%;
     height: 10rem;
   }
@@ -118,11 +132,10 @@ a {
     border-color: #02121b;
     font-size: 1.3rem;
   }
-
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width:768px) {
+@media only screen and (min-width: 768px) {
   .texto-header {
     font-size: 3.5rem;
     max-width: 70rem;
@@ -137,7 +150,14 @@ a {
   }
 
   .degradado-azul-blanco {
-    background-image: linear-gradient(to bottom, #84b6f4, #95c6f7, #aad5f9, #c1e4fc, #dbf2ff);
+    background-image: linear-gradient(
+      to bottom,
+      #84b6f4,
+      #95c6f7,
+      #aad5f9,
+      #c1e4fc,
+      #dbf2ff
+    );
     min-width: 100%;
     height: 7rem;
   }
@@ -171,7 +191,6 @@ a {
     border-color: #02121b;
     font-size: 1.2rem;
   }
-
 }
 
 .opciones {
@@ -216,7 +235,7 @@ a {
 }
 
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width:600px) {
+@media only screen and (max-width: 600px) {
   .area-login {
     border-radius: 50px;
     background-color: #dbf2ff;
@@ -246,11 +265,10 @@ a {
     justify-content: center;
     margin-top: 1rem;
   }
-
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width:600px) {
+@media only screen and (min-width: 600px) {
   .area-login {
     border-radius: 50px;
     background-color: #dbf2ff;
@@ -280,11 +298,10 @@ a {
     justify-content: center;
     margin-top: 1rem;
   }
-
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width:768px) {
+@media only screen and (min-width: 768px) {
   .area-login {
     border-radius: 50px;
     background-color: #dbf2ff;
@@ -314,11 +331,10 @@ a {
     justify-content: center;
     margin-top: 1rem;
   }
-
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width:992px) {
+@media only screen and (min-width: 992px) {
   .area-login {
     border-radius: 50px;
     background-color: #dbf2ff;
@@ -352,11 +368,10 @@ a {
   .padding-genero {
     padding-top: 2rem;
   }
-
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width:1200px) {
+@media only screen and (min-width: 1200px) {
   .area-login {
     border-radius: 50px;
     background-color: #dbf2ff;
@@ -371,7 +386,6 @@ a {
     justify-content: center;
     margin-top: -1.5rem;
   }
-
 }
 
 .imagen-login {
@@ -444,4 +458,20 @@ a {
   max-width: 50rem;
   margin-left: auto;
   margin-right: auto;
+}
+
+.contendor-imagen-infante {
+  border-color: #02121b;
+  border-width: 0.2rem;
+  border-style: solid;
+  border-radius: 1rem;
+  height: 20rem;
+  width: 20rem;
+}
+
+.imagen-infante {
+  object-fit: contain;
+  width: 100% !important;
+  position: relative !important;
+  height: unset !important;
 }

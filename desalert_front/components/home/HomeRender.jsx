@@ -5,21 +5,21 @@ import HomeMedico from "./homeMedico/HomeMedico";
 
 const HomeRender = () => {
 
-  const { rol } = useRol();
+    let rol = "auxiliar";
 
-  if (rol.localeCompare("acudiente")) {
+  if (rol=="acudiente") {
     return (
       <>
         <HomeAcudiente />
       </>
     );
-  } else if (rol.localeCompare("auxiliar")) {
+  } else if (rol=="auxiliar") {
     return (
       <>
         <HomeAuxiliar />
       </>
     );
-  } else if (rol.localeCompare("medico")) {
+  } else if (rol=="medico") {
     return (
       <>
         <HomeMedico />
