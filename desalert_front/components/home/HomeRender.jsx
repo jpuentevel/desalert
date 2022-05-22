@@ -5,7 +5,7 @@ import HomeMedico from "./homeMedico/HomeMedico";
 
 const HomeRender = () => {
 
-    let rol = "auxiliar";
+    let rol = "medico";
 
   if (rol=="acudiente") {
     return (

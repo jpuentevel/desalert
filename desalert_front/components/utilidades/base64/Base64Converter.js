@@ -1,14 +1,16 @@
-const imageToBase64 = require('image-to-base64');
+import { read } from "@popperjs/core";
 
-imageToBase64(path).then(
-    (response) => {
-        return response;
-    }
-)
-.catch(
-    (error) => {
-        console.log(error);
-    }
-)
+const imageToBase64 = (file) => {
+    return new Promise ((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => {
+            resolve(reader.result);
+        }
+        reader.onerror = (error) => {
+            reject(error);
+        }
+    });
+}
 
 export { imageToBase64 }

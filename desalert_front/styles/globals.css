@@ -461,17 +461,41 @@ a {
 }
 
 .contendor-imagen-infante {
-  border-color: #02121b;
+  border-color: #84b6f4;
   border-width: 0.2rem;
   border-style: solid;
   border-radius: 1rem;
-  height: 20rem;
-  width: 20rem;
+  height: 15rem;
+  width: 15rem;
 }
 
 .imagen-infante {
-  object-fit: contain;
+  background-size: cover;
   width: 100% !important;
   position: relative !important;
-  height: unset !important;
+  height: 100% !important;
+  border-radius: 0.7rem;
+}
+
+.contenedor-datos-infante {
+  border-radius: 0.7rem;
+  background: #dbf2ff;
+  border-color: #84b6f4;
+  border-width: 0.2rem;
+  border-style: solid;
+  padding: 1.5rem;
+  min-height: 13rem;
+  max-height: fit-content;
+}
+
+.item-datos-infante {
+  background-color: #dbf2ff;
+  color: darkblue;
+}
+
+.contenedor-grafica-infante {
+  border-radius: 0.7rem;
+  border-color: #84b6f4;
+  border-width: 0.2rem;
+  border-style: solid;
 }

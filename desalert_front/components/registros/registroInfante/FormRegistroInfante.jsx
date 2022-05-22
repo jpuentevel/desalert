@@ -1,10 +1,11 @@
 import Image from "next/image"
 import Link from "next/link"
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
+import { imageToBase64 } from "components/utilidades/base64/Base64Converter"
 
 const FormRegistroInfante = () => {
-  const [InfanteImagen, setInfanteImagen] = useState("/upload-an-image.svg")
-  const [InfanteStringImagen, setInfanteStringImagen] = useState("/upload-an-image.svg")
+  const [InfanteImagen, setInfanteImagen] = useState("")
+  const [InfanteStringImagen, setInfanteStringImagen] = useState("")
   const [InfanteNombre, setInfanteNombre] = useState("")
   const [InfanteID, setInfanteID] = useState("")
   const [InfanteAcudienteID, setInfanteAcudienteID] = useState("")
@@ -33,47 +34,22 @@ const FormRegistroInfante = () => {
     const dataUsuario = {}
   }
 
-  const imageMimeType = /image\/(png|jpg|jpeg)/i;
-
-  let file;
-
-  const changeImage = (e) => {
-      file = e.target.files[0];
-      if (!file.type.match(imageMimeType)) {
-          alert("Error de tipo");
-          return;
-      }
-      setInfanteImagen(file);
+  const convertidorImagen = async (imagen) => {
+      const file = imagen.target.files[0];
+      const base64 = await imageToBase64(file);
+      setInfanteStringImagen(base64)
+      console.log(base64);
+      return base64;      
   }
-
-  useEffect(() => {
-      let fileReader, isCancel = false;
-      if (file) {
-          fileReader = new FileReader();
-          fileReader.onload = (e) => {
-              const { result } = e.target;
-              if (result && !isCancel) {
-                  setInfanteStringImagen(result)
-              }
-          }
-          fileReader.readAsDataURL(file)
-      }
-      return () => {
-          isCancel = true;
-          if (fileReader && fileReader.readyState === 1) {
-              fileReader.abort();
-          }
-      }
-  }, [file])
 
   return (
     <>
       <form className="row">
         <div className="col col-lg-6 col-sm-12">
           <div className="mb-3">
-            <div className="contendor-imagen-infante">
-              <Image src={InfanteStringImagen} alt="Imagen del infante" height={400} width={400}></Image>
-            </div>
+              <div className="contendor-imagen-infante mb-3">
+                  <img className="imagen-infante" alt="Imagen del infante" src={InfanteStringImagen}></img>
+              </div>
             <label
               htmlFor="inputRegistroInfanteImagen"
               className="form-label text fs-4"
@@ -87,7 +63,10 @@ const FormRegistroInfante = () => {
               name="inputRegistroInfanteImagen"
               value={InfanteImagen}
               accept=".png, .jpg, .jpeg"
-              onChange={(e) => {changeImage}}
+              onChange={(e) => {
+                  setInfanteImagen(e.target.value);
+                  setInfanteStringImagen(convertidorImagen(e));
+                }}
             />
           </div>
           <div className="mb-3">

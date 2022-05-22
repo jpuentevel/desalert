@@ -15,7 +15,7 @@ const CardInfante = (props) => {
               <li className="card-text text fs-5">Edad: {props.edad}</li>
               <li className="card-text text fs-5">Estado: {props.estado}</li>
           </ul>
-          <Link href="#">
+          <Link href="/detalles/[id]" as={`detalles/${props.id}`}>
             <button className="btn boton-login">Ver detalles</button>
           </Link>
         </div>
