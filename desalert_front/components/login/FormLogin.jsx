@@ -1,6 +1,7 @@
 import Link from "next/link"
 import React, { useState } from "react"
 import { useLocalStorage } from "../utilidades/hooks/useLocalStorage"
+import { swalSuccess, swalError } from "components/utilidades/SweetAlert2/swal"
 
 const FormLogin = () => {
   const [usuarioInput, setUsusarioInput] = useState("")
@@ -13,7 +14,7 @@ const FormLogin = () => {
     e.preventDefault()
     setUsuario(usuarioInput)
     setContrasena(contrasenaInput)
-    console.log(usuario, contrasena)
+    swalSuccess("Sesión iniciada")
   }
 
   return (

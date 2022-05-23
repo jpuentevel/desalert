@@ -1,14 +1,28 @@
 import { MyChart } from "components/utilidades/chartJS/MyChart"
 import React from "react"
+import Link from "next/link"
 
 const HomeInfante = () => {
+  const infanteID = 666
+
   return (
     <>
       <div className="fondo-opciones p-5">
+        <div className="mb-5">
+          <p className="text fs-1 fw-bold">Datos generales del infante</p>
+          <Link
+            href="/historia-clinica/[infante]"
+            as={`/historia-clinica/${infanteID}`}
+          >
+            <button className="boton-login btn fs-5">
+              Generar nueva historia clínica
+            </button>
+          </Link>
+        </div>
         <div className="row">
           <div className="col col-lg-8 col-sm-12 col-xs-12 pe-4">
             <div className="row">
-              <div className="col col-lg-6 col-sm-12 col-xs-12 mb-4">
+              <div className="col col-lg-4 col-sm-12 col-xs-12 mb-4">
                 <div className="contendor-imagen-infante mb-3">
                   <img
                     className="imagen-infante"
@@ -17,7 +31,7 @@ const HomeInfante = () => {
                   ></img>
                 </div>
               </div>
-              <div className="col col-lg-6 col-sm-12 col-xs-12">
+              <div className="col col-lg-8 col-sm-12 col-xs-12">
                 <div className="contenedor-datos-infante">
                   <div className="row">
                     <div className="col">
@@ -56,7 +70,7 @@ const HomeInfante = () => {
           </div>
           <div className="col col-lg-4">
             <div>
-              <table className="table table-hover table-primary table-bordered border-primary">
+              <table className="mt-3 table table-hover table-primary table-bordered border-primary">
                 <caption>Lista de historias clínicas del infante</caption>
                 <thead>
                   <tr>
@@ -69,17 +83,23 @@ const HomeInfante = () => {
                   <tr>
                     <th scope="row">1</th>
                     <td>2022-05-24</td>
-                    <td><a href="#">some place no here</a></td>
+                    <td>
+                      <a href="#">some place no here</a>
+                    </td>
                   </tr>
                   <tr>
                     <th scope="row">2</th>
                     <td>2022-03-12</td>
-                    <td><a href="#">some place no here</a></td>
+                    <td>
+                      <a href="#">some place no here</a>
+                    </td>
                   </tr>
                   <tr>
                     <th scope="row">3</th>
                     <td>2022-01-15</td>
-                    <td><a href="#">some place no here</a></td>
+                    <td>
+                      <a href="#">some place no here</a>
+                    </td>
                   </tr>
                 </tbody>
               </table>

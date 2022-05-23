@@ -1,3 +1,5 @@
+import { useLocalStorage } from "../utilidades/hooks/useLocalStorage"
+
 const guardarOpcionLocalStorage = (opcion) => {
     if (typeof window !== 'undefined') {
         localStorage.setItem('rol', JSON.stringify(opcion))
