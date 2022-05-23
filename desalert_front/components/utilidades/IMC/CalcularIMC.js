@@ -1,10 +1,10 @@
 const calcularIMC = (altura, peso) => {
   const IMC = peso / (altura * altura)
-  return IMC
+  return IMC = IMC.toFixed(1)
 }
 
 const calcularRango = (imc, edad) => {
-  let rango = 0
+  let rango;
   if (edad >= 0 && edad <= 5) {
     if (imc < 12.1) {
       rango = "d-s"
@@ -23,9 +23,6 @@ const calcularRango = (imc, edad) => {
       return rango
     } else if (imc >= 18.3) {
       rango = "o"
-      return rango
-    } else {
-      rango = "error"
       return rango
     }
   } else if (edad == 6) {
@@ -47,9 +44,6 @@ const calcularRango = (imc, edad) => {
     } else if (imc >= 18.5) {
       rango = "o"
       return rango
-    } else {
-      rango = "error"
-      return rango
     }
   } else if (edad == 7) {
     if (imc < 12.3) {
@@ -69,9 +63,6 @@ const calcularRango = (imc, edad) => {
       return rango
     } else if (imc >= 19.0) {
       rango = "o"
-      return rango
-    } else {
-      rango = "error"
       return rango
     }
   } else if (edad == 8) {
@@ -93,9 +84,6 @@ const calcularRango = (imc, edad) => {
     } else if (imc >= 19.7) {
       rango = "o"
       return rango
-    } else {
-      rango = "error"
-      return rango
     }
   } else if (edad == 9) {
     if (imc < 12.6) {
@@ -115,9 +103,6 @@ const calcularRango = (imc, edad) => {
       return rango
     } else if (imc >= 20.5) {
       rango = "o"
-      return rango
-    } else {
-      rango = "error"
       return rango
     }
   } else if (edad == 10) {
@@ -139,9 +124,6 @@ const calcularRango = (imc, edad) => {
     } else if (imc >= 21.4) {
       rango = "o"
       return rango
-    } else {
-      rango = "error"
-      return rango
     }
   } else if (edad == 11) {
     if (imc < 13.1) {
@@ -161,9 +143,6 @@ const calcularRango = (imc, edad) => {
       return rango
     } else if (imc >= 22.5) {
       rango = "o"
-      return rango
-    } else {
-      rango = "error"
       return rango
     }
   } else if (edad == 12) {
@@ -185,9 +164,6 @@ const calcularRango = (imc, edad) => {
     } else if (imc >= 23.6) {
       rango = "o"
       return rango
-    } else {
-      rango = "error"
-      return rango
     }
   } else if (edad == 13) {
     if (imc < 13.8) {
@@ -207,9 +183,6 @@ const calcularRango = (imc, edad) => {
       return rango
     } else if (imc >= 24.8) {
       rango = "o"
-      return rango
-    } else {
-      rango = "error"
       return rango
     }
   } else if (edad == 14) {
@@ -231,9 +204,6 @@ const calcularRango = (imc, edad) => {
     } else if (imc >= 25.9) {
       rango = "o"
       return rango
-    } else {
-      rango = "error"
-      return rango
     }
   } else if (edad == 15) {
     if (imc < 14.7) {
@@ -253,9 +223,6 @@ const calcularRango = (imc, edad) => {
       return rango
     } else if (imc >= 27.0) {
       rango = "o"
-      return rango
-    } else {
-      rango = "error"
       return rango
     }
   } else if (edad == 16) {
@@ -277,9 +244,6 @@ const calcularRango = (imc, edad) => {
     } else if (imc >= 27.9) {
       rango = "o"
       return rango
-    } else {
-      rango = "error"
-      return rango
     }
   } else if (edad == 17) {
     if (imc < 15.4) {
@@ -299,9 +263,6 @@ const calcularRango = (imc, edad) => {
       return rango
     } else if (imc >= 28.6) {
       rango = "o"
-      return rango
-    } else {
-      rango = "error"
       return rango
     }
   } else if (edad == 18) {
@@ -323,9 +284,6 @@ const calcularRango = (imc, edad) => {
     } else if (imc >= 29.2) {
       rango = "o"
       return rango
-    } else {
-      rango = "error"
-      return rango
     }
   } else {
     rango = "error"
@@ -333,7 +291,7 @@ const calcularRango = (imc, edad) => {
 }
 
 const definirColor = (rango) => {
-  let color = "error"
+  let color;
 
   if (rango == "d-s") {
     color = "rojo"
@@ -352,9 +310,6 @@ const definirColor = (rango) => {
     return color
   } else if (rango == "o") {
     color = "morado"
-    return color
-  } else {
-    color = "error"
     return color
   }
 }

@@ -531,3 +531,12 @@ a {
 .colored-toast .swal2-html-container {
   color: white;
 }
+
+.texto-swal {
+    color: white !important;
+    font-weight: bold !important;
+}
+
+.icon-swal {
+    background-color: white !important;
+}

@@ -3,7 +3,7 @@ import React from "react"
 import Link from "next/link"
 
 const HomeInfante = () => {
-  const infanteID = 666
+  const infanteID = 802
 
   return (
     <>

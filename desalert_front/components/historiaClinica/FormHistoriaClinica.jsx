@@ -4,19 +4,90 @@ import {
   calcularRango,
   definirColor,
 } from "components/utilidades/IMC/CalcularIMC"
-import { swalIMC } from "components/utilidades/SweetAlert2/swal"
+import { swalIMC, swalSuccess } from "components/utilidades/SweetAlert2/swal"
 
 const FormHistoriaClinica = () => {
+  //generales
   const [altura, setAltura] = useState(0)
   const [peso, setPeso] = useState(0)
   const [imc, setImc] = useState(0)
   const [rango, setRango] = useState("")
   const [edad, setEdad] = useState(15)
   const [color, setColor] = useState()
-  const [pechoMaterno, setPechoMaterno] = useState(false)
+  const [calcularIsClicked, setCalcularIsClicked] = useState(false)
 
-  const handleClickCalcularIMC = (e) => {
-    e.preventDefault()
+  //padecimiento actual
+  const [padecimientos, setPadecimientos] = useState("")
+  const [diagnosticoPrevio, setDiagnosticoPrevio] = useState("")
+  const [estudioPrevio, setEstudioPrevio] = useState("")
+  const [terapeutaPrevia, setTerapeutaPrevia] = useState("")
+
+  //alimentacion
+  const [pechoMaterno, setPechoMaterno] = useState(false)
+  const [duracion, setDuracion] = useState(0)
+  const [ablactacion, setAblactacion] = useState(0)
+  const [destete, setDestete] = useState(0)
+
+  //alimentacion real
+  const [carne, setCarne] = useState(false)
+  const [leche, setLeche] = useState(false)
+  const [frutas, setFrutas] = useState(false)
+  const [cereales, setCereales] = useState(false)
+  const [legumbres, setLegumbres] = useState(false)
+
+  // inmunizaciones
+  const [poliomelitis, setPoliomelitis] = useState(false)
+  const [rotavirus, setRotavirus] = useState(false)
+  const [dpto, setDpto] = useState(false)
+  const [influenza, setInfluenza] = useState(false)
+  const [sarampion, setSarampion] = useState(false)
+  const [epatitisB, setEpatitisB] = useState(false)
+  const [rubeola, setRubeola] = useState(false)
+  const [neumococo, setNeumococo] = useState(false)
+  const [parotiditis, setParotiditis] = useState(false)
+  const [bgc, setBgc] = useState(false)
+  const [varicela, setVaricela] = useState(false)
+  const [tixoide, setTixoide] = useState(false)
+  const [A1, setA1] = useState(false)
+  const [papiloma, setPapiloma] = useState(false)
+  const [sueros, setSueros] = useState("")
+
+  // desarrollo psicomotor
+  const [datosAnormales, setDatosAnormales] = useState("")
+  const [alteracionesLenguaje, setAlteracionesLenguaje] = useState("")
+
+  // patologicos
+  const [infecciones, setInfecciones] = useState(false)
+  const [alergicos, setAlergicos] = useState(false)
+  const [traumatismoicos, setTraumatismoicos] = useState(false)
+  const [transfuciones, setTransfuciones] = useState(false)
+  const [quirurgicos, setQuirurgicos] = useState(false)
+  const [hospitalizacion, setHospitalizacion] = useState(false)
+
+  // exploracion fisica
+  const [perimetroCefalico, setPerimetroCefalico] = useState("")
+  const [perimetroEmbarazo, setPerimetroEmbarazo] = useState("")
+  const [perimetroPierna, setPerimetroPierna] = useState("")
+  const [segmentoInferior, setSegmentoInferior] = useState("")
+  const [tensionArterial, setTensionArterial] = useState("")
+  const [frecuenciaCardiaca, setFrecuenciaCardiaca] = useState("")
+  const [frecuenciaRespiratoria, setFrecuenciaRespiratoria] = useState("")
+  const [temperatura, setTemperatura] = useState("")
+
+  // anormalidades
+  const [piel, setPiel] = useState(false)
+  const [cabeza, setCabeza] = useState(false)
+  const [ojos, setOjos] = useState(false)
+  const [oidos, setOidos] = useState(false)
+  const [nariz, setNariz] = useState(false)
+  const [boca, setBoca] = useState(false)
+  const [cuello, setCuello] = useState(false)
+  const [torax, setTorax] = useState(false)
+  const [areaCardiaca, setAreaCardiaca] = useState(false)
+  const [pulmonar, setPulmonar] = useState(false)
+
+  const handleClickCalcularIMC = () => {
+    //e.preventDefault()
 
     Promise.all([
       setImc(calcularIMC(altura, peso)),
@@ -25,8 +96,18 @@ const FormHistoriaClinica = () => {
     ]).then(swalIMC(imc, color))
   }
 
+  if (calcularIsClicked) {
+    Promise.all([
+      setImc(calcularIMC(altura, peso)),
+      setRango(calcularRango(imc, edad)),
+      setColor(definirColor(rango)),
+    ]).then(swalIMC(imc, color))
+    setCalcularIsClicked(false)
+  }
+
   const handleSubmitHistoriaClinica = (e) => {
     e.preventDefault()
+    swalSuccess("Historia agregada correctamente")
   }
 
   return (
@@ -87,7 +168,11 @@ const FormHistoriaClinica = () => {
             <button
               className="btn fs-5 boton-login text"
               onClick={(e) => {
-                handleClickCalcularIMC(e)
+                e.preventDefault()
+                setCalcularIsClicked(true)
+                setImc(calcularIMC(altura, peso))
+                setRango(calcularRango(imc, edad))
+                setColor(definirColor(rango))
               }}
             >
               Calcular IMC

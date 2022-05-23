@@ -14,8 +14,8 @@ const Toast = Swal.mixin({
 })
 
 function swalIMC(imc, color) {
-  let text = "error desde el principio"
-  let background = "#82FF80"
+  let text
+  let background
 
   if (color == "rojo") {
     text = "¡Atención! El infante tiene desnutrición severa"
@@ -35,16 +35,14 @@ function swalIMC(imc, color) {
   } else if (color == "morado") {
     text = "¡Atención! El infante tiene obesidad"
     background = "#5C26D1"
-  } else {
-    text = "error"
-    background = "#82FF00"
   }
 
   return Swal.fire({
-      customClass: {
-          text: "text-white",
-          title: "text-white"
-      },
+    customClass: {
+      text: "texto-swal",
+      title: "texto-swal",
+      icon: "icon-swal",
+    },
     icon: "warning",
     text: text,
     title: imc,
