@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prepare": "husky install"
+    "prepare": "node -e \"if(require('fs').existsSync('.git')){process.exit(1)}\" || is-ci || husky install"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.5",
@@ -29,7 +29,7 @@
     "eslint-plugin-n": "^15.2.0",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.30.0",
-    "husky": "^8.0.1",
+    "husky": "^8.0.0",
     "lint-staged": "^12.4.1",
     "prettier": "^2.6.2"
   },
