@@ -1,4 +1,4 @@
-import { useLocalStorage } from "../utilidades/hooks/useLocalStorage"
+// import { useLocalStorage } from "../utilidades/hooks/useLocalStorage"
 
 const guardarOpcionLocalStorage = (opcion) => {
     if (typeof window !== 'undefined') {
@@ -7,7 +7,7 @@ const guardarOpcionLocalStorage = (opcion) => {
 }
 
 const obtenerOpcionLocalStorage = () => {
-    let existe = saberSiExisteRolLocalStorage();
+    const existe = saberSiExisteRolLocalStorage();
     let rol;
     if (typeof window !== 'undefined') {
         if (existe) {

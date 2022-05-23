@@ -21,7 +21,7 @@ const ContenedorInfantesNoAtendidos = () => {
   };
 
   const filtrar = (terminoBusqueda) => {
-    var resultadoBusqueda = filtrados.filter((elemento) => {
+    let resultadoBusqueda = filtrados.filter((elemento) => {
       if (
         elemento.name
           .toString()
@@ -33,7 +33,7 @@ const ContenedorInfantesNoAtendidos = () => {
           .includes(terminoBusqueda.toLowerCase())
       ) {
         return elemento;
-      }
+      } else { return null }
     });
     setNoAtendidos(resultadoBusqueda);
   };

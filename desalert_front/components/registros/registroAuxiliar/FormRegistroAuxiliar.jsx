@@ -171,7 +171,7 @@ const FormRegistroAuxiliar = () => {
           </div>
         </div>
 
-        <Link href="/home" passHref>
+        <Link href="/home/[rolHome]" as={`/home/auxiliar`} passHref>
           <button type="submit" className="btn boton-login mt-3 text fs-5">
             Registrarse
           </button>

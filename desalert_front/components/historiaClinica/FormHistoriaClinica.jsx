@@ -7,7 +7,7 @@ import {
 import { swalIMC, swalSuccess } from "components/utilidades/SweetAlert2/swal"
 
 const FormHistoriaClinica = () => {
-  //generales
+  // generales
   const [altura, setAltura] = useState(0)
   const [peso, setPeso] = useState(0)
   const [imc, setImc] = useState(0)
@@ -16,19 +16,19 @@ const FormHistoriaClinica = () => {
   const [color, setColor] = useState()
   const [calcularIsClicked, setCalcularIsClicked] = useState(false)
 
-  //padecimiento actual
+  // padecimiento actual
   const [padecimientos, setPadecimientos] = useState("")
   const [diagnosticoPrevio, setDiagnosticoPrevio] = useState("")
   const [estudioPrevio, setEstudioPrevio] = useState("")
   const [terapeutaPrevia, setTerapeutaPrevia] = useState("")
 
-  //alimentacion
+  // alimentacion
   const [pechoMaterno, setPechoMaterno] = useState(false)
   const [duracion, setDuracion] = useState(0)
   const [ablactacion, setAblactacion] = useState(0)
   const [destete, setDestete] = useState(0)
 
-  //alimentacion real
+  // alimentacion real
   const [carne, setCarne] = useState(false)
   const [leche, setLeche] = useState(false)
   const [frutas, setFrutas] = useState(false)
@@ -48,6 +48,7 @@ const FormHistoriaClinica = () => {
   const [bgc, setBgc] = useState(false)
   const [varicela, setVaricela] = useState(false)
   const [tixoide, setTixoide] = useState(false)
+  const [hepatitis, setHepatitis] = useState(false)
   const [A1, setA1] = useState(false)
   const [papiloma, setPapiloma] = useState(false)
   const [sueros, setSueros] = useState("")
@@ -68,6 +69,7 @@ const FormHistoriaClinica = () => {
   const [perimetroCefalico, setPerimetroCefalico] = useState("")
   const [perimetroEmbarazo, setPerimetroEmbarazo] = useState("")
   const [perimetroPierna, setPerimetroPierna] = useState("")
+  const [segmentoSuperior, setSegmentoSuperior] = useState("")
   const [segmentoInferior, setSegmentoInferior] = useState("")
   const [tensionArterial, setTensionArterial] = useState("")
   const [frecuenciaCardiaca, setFrecuenciaCardiaca] = useState("")
@@ -85,6 +87,9 @@ const FormHistoriaClinica = () => {
   const [torax, setTorax] = useState(false)
   const [areaCardiaca, setAreaCardiaca] = useState(false)
   const [pulmonar, setPulmonar] = useState(false)
+
+  // nombre medico
+  const [nombreMedico, setNombreMedico] = useState("")
 
   const handleClickCalcularIMC = () => {
     //e.preventDefault()
@@ -192,11 +197,15 @@ const FormHistoriaClinica = () => {
               Padecimientos
             </label>
             <textarea
-              class="form-control"
+              className="form-control"
               name="inputHistoriaClinicaPadecimientos"
               id="inputHistoriaClinicaPadecimientos"
               cols="30"
               rows="10"
+              value={padecimientos}
+              onChange={(e) => {
+                setPadecimientos(e.target.value)
+              }}
             ></textarea>
           </div>
           <div className="mb-3">
@@ -207,11 +216,15 @@ const FormHistoriaClinica = () => {
               Diagnóstico previo
             </label>
             <textarea
-              class="form-control"
+              className="form-control"
               name="inputHistoriaClinicaDiagnosticoPrevio"
               id="inputHistoriaClinicaDiagnosticoPrevio"
               cols="30"
               rows="10"
+              value={diagnosticoPrevio}
+              onChange={(e) => {
+                setDiagnosticoPrevio(e.target.value)
+              }}
             ></textarea>
           </div>
           <div className="mb-3">
@@ -222,11 +235,15 @@ const FormHistoriaClinica = () => {
               Estudio previo
             </label>
             <textarea
-              class="form-control"
+              className="form-control"
               name="inputHistoriaClinicaEstudioPrevio"
               id="inputHistoriaClinicaEstudioPrevio"
               cols="30"
               rows="10"
+              value={estudioPrevio}
+              onChange={(e) => {
+                setEstudioPrevio(e.target.value)
+              }}
             ></textarea>
           </div>
           <div className="mb-3">
@@ -234,14 +251,18 @@ const FormHistoriaClinica = () => {
               htmlFor="inputHistoriaClinicaTerapeutaPrevio"
               className="form-label text fs-4"
             >
-              Terapeuta previo
+              Terapeuta previa
             </label>
             <textarea
-              class="form-control"
+              className="form-control"
               name="inputHistoriaClinicaTerapeutaPrevio"
               id="inputHistoriaClinicaTerapeutaPrevio"
               cols="30"
               rows="10"
+              value={terapeutaPrevia}
+              onChange={(e) => {
+                setTerapeutaPrevia(e.target.value)
+              }}
             ></textarea>
           </div>
         </div>
@@ -281,6 +302,10 @@ const FormHistoriaClinica = () => {
               id="inputHistoriaClinicaPechoMaternoDuracion"
               className="form-control"
               disabled={!pechoMaterno}
+              value={duracion}
+              onChange={(e) => {
+                setDuracion(e.target.value)
+              }}
             />
           </div>
           <div className="mb-3">
@@ -296,6 +321,10 @@ const FormHistoriaClinica = () => {
               id="inputHistoriaClinicaPechoMaternoAblactacion"
               className="form-control"
               disabled={!pechoMaterno}
+              value={ablactacion}
+              onChange={(e) => {
+                setAblactacion(e.target.value)
+              }}
             />
           </div>
           <div className="mb-3">
@@ -311,6 +340,10 @@ const FormHistoriaClinica = () => {
               id="inputHistoriaClinicaPechoMaternoDestete"
               className="form-control"
               disabled={!pechoMaterno}
+              value={destete}
+              onChange={(e) => {
+                setDestete(e.target.value)
+              }}
             />
           </div>
         </div>
@@ -325,6 +358,10 @@ const FormHistoriaClinica = () => {
               name="inputHistoriaClinicaCarne"
               id="inputHistoriaClinicaCarne"
               className="form-check-input ms-1 me-1 text fs-4 "
+              value={carne}
+              onChange={(e) => {
+                setCarne(e.target.value)
+              }}
             />
             <label
               htmlFor="inputHistoriaClinicaCarne"
@@ -339,6 +376,10 @@ const FormHistoriaClinica = () => {
               name="inputHistoriaClinicaLeche"
               id="inputHistoriaClinicaLeche"
               className="form-check-input ms-1 me-1 text fs-4 "
+              value={leche}
+              onChange={(e) => {
+                setLeche(e.target.value)
+              }}
             />
             <label
               htmlFor="inputHistoriaClinicaLeche"
@@ -353,6 +394,10 @@ const FormHistoriaClinica = () => {
               name="inputHistoriaClinicaFrutas"
               id="inputHistoriaClinicaFrutas"
               className="form-check-input ms-1 me-1 text fs-4 "
+              value={frutas}
+              onChange={(e) => {
+                setFrutas(e.target.value)
+              }}
             />
             <label
               htmlFor="inputHistoriaClinicaFrutas"
@@ -367,6 +412,10 @@ const FormHistoriaClinica = () => {
               name="inputHistoriaClinicaCereales"
               id="inputHistoriaClinicaCereales"
               className="form-check-input ms-1 me-1 text fs-4 "
+              value={cereales}
+              onChange={(e) => {
+                setCereales(e.target.value)
+              }}
             />
             <label
               htmlFor="inputHistoriaClinicaCereales"
@@ -381,6 +430,10 @@ const FormHistoriaClinica = () => {
               name="inputHistoriaClinicaLegumbres"
               id="inputHistoriaClinicaLegumbres"
               className="form-check-input ms-1 me-1 text fs-4 "
+              value={legumbres}
+              onChange={(e) => {
+                setLegumbres(e.target.value)
+              }}
             />
             <label
               htmlFor="inputHistoriaClinicaLegumbres"
@@ -403,6 +456,10 @@ const FormHistoriaClinica = () => {
                   name="inputHistoriaClinicaPoliomelitis"
                   id="inputHistoriaClinicaPoliomelitis"
                   className="form-check-input text fs-4 "
+                  value={poliomelitis}
+                  onChange={(e) => {
+                    setPoliomelitis(e.target.value)
+                  }}
                 />
                 <label
                   htmlFor="inputHistoriaClinicaPoliomelitis"
@@ -417,6 +474,10 @@ const FormHistoriaClinica = () => {
                   name="inputHistoriaClinicaRotavirus"
                   id="inputHistoriaClinicaRotavirus"
                   className="form-check-input text fs-4 "
+                  value={rotavirus}
+                  onChange={(e) => {
+                    setRotavirus(e.target.value)
+                  }}
                 />
                 <label
                   htmlFor="inputHistoriaClinicaRotavirus"
@@ -431,6 +492,10 @@ const FormHistoriaClinica = () => {
                   name="inputHistoriaClinicaDpto"
                   id="inputHistoriaClinicaDpto"
                   className="form-check-input text fs-4 "
+                  value={dpto}
+                  onChange={(e) => {
+                    setDpto(e.target.value)
+                  }}
                 />
                 <label
                   htmlFor="inputHistoriaClinicaDpto"
@@ -445,6 +510,10 @@ const FormHistoriaClinica = () => {
                   name="inputHistoriaClinicaInfluenza"
                   id="inputHistoriaClinicaInfluenza"
                   className="form-check-input text fs-4 "
+                  value={influenza}
+                  onChange={(e) => {
+                    setInfluenza(e.target.value)
+                  }}
                 />
                 <label
                   htmlFor="inputHistoriaClinicaInfluenza"
@@ -461,6 +530,10 @@ const FormHistoriaClinica = () => {
                   name="inputHistoriaClinicaSarampion"
                   id="inputHistoriaClinicaSarampion"
                   className="form-check-input text fs-4 "
+                  value={sarampion}
+                  onChange={(e) => {
+                    setSarampion(e.target.value)
+                  }}
                 />
                 <label
                   htmlFor="inputHistoriaClinicaSarampion"
@@ -475,6 +548,10 @@ const FormHistoriaClinica = () => {
                   name="inputHistoriaClinicaEpatitisB"
                   id="inputHistoriaClinicaEpatitisB"
                   className="form-check-input text fs-4 "
+                  value={epatitisB}
+                  onChange={(e) => {
+                    setEpatitisB(e.target.value)
+                  }}
                 />
                 <label
                   htmlFor="inputHistoriaClinicaEpatitisB"
@@ -489,6 +566,10 @@ const FormHistoriaClinica = () => {
                   name="inputHistoriaClinicaRubeola"
                   id="inputHistoriaClinicaRubeola"
                   className="form-check-input text fs-4 "
+                  value={rubeola}
+                  onChange={(e) => {
+                    setRubeola(e.target.value)
+                  }}
                 />
                 <label
                   htmlFor="inputHistoriaClinicaRubeola"
@@ -503,6 +584,10 @@ const FormHistoriaClinica = () => {
                   name="inputHistoriaClinicaNeumococo"
                   id="inputHistoriaClinicaNeumococo"
                   className="form-check-input text fs-4 "
+                  value={neumococo}
+                  onChange={(e) => {
+                    setNeumococo(e.target.value)
+                  }}
                 />
                 <label
                   htmlFor="inputHistoriaClinicaNeumococo"
@@ -519,6 +604,10 @@ const FormHistoriaClinica = () => {
                   name="inputHistoriaClinicaParotiditis"
                   id="inputHistoriaClinicaParotiditis"
                   className="form-check-input text fs-4 "
+                  value={parotiditis}
+                  onChange={(e) => {
+                    setParotiditis(e.target.value)
+                  }}
                 />
                 <label
                   htmlFor="inputHistoriaClinicaParotiditis"
@@ -533,6 +622,10 @@ const FormHistoriaClinica = () => {
                   name="inputHistoriaClinicaBcg"
                   id="inputHistoriaClinicaBcg"
                   className="form-check-input text fs-4 "
+                  value={bgc}
+                  onChange={(e) => {
+                    setBgc(e.target.value)
+                  }}
                 />
                 <label
                   htmlFor="inputHistoriaClinicaBcg"
@@ -547,6 +640,10 @@ const FormHistoriaClinica = () => {
                   name="inputHistoriaClinicaVaricela"
                   id="inputHistoriaClinicaVaricela"
                   className="form-check-input text fs-4 "
+                  value={varicela}
+                  onChange={(e) => {
+                    setVaricela(e.target.value)
+                  }}
                 />
                 <label
                   htmlFor="inputHistoriaClinicaVaricela"
@@ -561,6 +658,10 @@ const FormHistoriaClinica = () => {
                   name="inputHistoriaClinicaTixoide"
                   id="inputHistoriaClinicaTixoide"
                   className="form-check-input text fs-4 "
+                  value={tixoide}
+                  onChange={(e) => {
+                    setTixoide(e.target.value)
+                  }}
                 />
                 <label
                   htmlFor="inputHistoriaClinicaTixoide"
@@ -577,6 +678,10 @@ const FormHistoriaClinica = () => {
                   name="inputHistoriaClinicaHepatitis"
                   id="inputHistoriaClinicaHepatitis"
                   className="form-check-input text fs-4 "
+                  value={hepatitis}
+                  onChange={(e) => {
+                    setHepatitis(e.target.value)
+                  }}
                 />
                 <label
                   htmlFor="inputHistoriaClinicaHepatitis"
@@ -591,6 +696,10 @@ const FormHistoriaClinica = () => {
                   name="inputHistoriaClinicaA1"
                   id="inputHistoriaClinicaA1"
                   className="form-check-input text fs-4 "
+                  value={A1}
+                  onChange={(e) => {
+                    setA1(e.target.value)
+                  }}
                 />
                 <label
                   htmlFor="inputHistoriaClinicaA1"
@@ -605,6 +714,10 @@ const FormHistoriaClinica = () => {
                   name="inputHistoriaClinicaPapiloma"
                   id="inputHistoriaClinicaPapiloma"
                   className="form-check-input text fs-4 "
+                  value={papiloma}
+                  onChange={(e) => {
+                    setPapiloma(e.target.value)
+                  }}
                 />
                 <label
                   htmlFor="inputHistoriaClinicaPapiloma"
@@ -627,6 +740,10 @@ const FormHistoriaClinica = () => {
               name="inputHistoriaClinicaSueros"
               id="inputHistoriaClinicaSueros"
               className="form-control"
+              value={sueros}
+              onChange={(e) => {
+                setSueros(e.target.value)
+              }}
             />
           </div>
         </div>
@@ -647,6 +764,10 @@ const FormHistoriaClinica = () => {
               name="inputHistoriaClinicaDatosAnormales"
               id="inputHistoriaClinicaDatosAnormales"
               className="form-control"
+              value={datosAnormales}
+              onChange={(e) => {
+                setDatosAnormales(e.target.value)
+              }}
             />
           </div>
           <div className="mb-3">
@@ -661,6 +782,10 @@ const FormHistoriaClinica = () => {
               name="inputHistoriaClinicaAlteracionesLenguaje"
               id="inputHistoriaClinicaAlteracionesLenguaje"
               className="form-control"
+              value={alteracionesLenguaje}
+              onChange={(e) => {
+                setAlteracionesLenguaje(e.target.value)
+              }}
             />
           </div>
         </div>
@@ -677,6 +802,10 @@ const FormHistoriaClinica = () => {
                   name="inputHistoriaClinicaInfecciones"
                   id="inputHistoriaClinicaInfecciones"
                   className="form-check-input text fs-4 "
+                  value={infecciones}
+                  onChange={(e) => {
+                    setInfecciones(e.target.value)
+                  }}
                 />
                 <label
                   htmlFor="inputHistoriaClinicaInfecciones"
@@ -691,6 +820,10 @@ const FormHistoriaClinica = () => {
                   name="inputHistoriaClinicaAlergicos"
                   id="inputHistoriaClinicaAlergicos"
                   className="form-check-input text fs-4 "
+                  value={alergicos}
+                  onChange={(e) => {
+                    setAlergicos(e.target.value)
+                  }}
                 />
                 <label
                   htmlFor="inputHistoriaClinicaAlergicos"
@@ -705,6 +838,10 @@ const FormHistoriaClinica = () => {
                   name="inputHistoriaClinicaTraumatismoicos"
                   id="inputHistoriaClinicaTraumatismoicos"
                   className="form-check-input text fs-4 "
+                  value={traumatismoicos}
+                  onChange={(e) => {
+                    setTraumatismoicos(e.target.value)
+                  }}
                 />
                 <label
                   htmlFor="inputHistoriaClinicaTraumatismoicos"
@@ -721,6 +858,10 @@ const FormHistoriaClinica = () => {
                   name="inputHistoriaClinicaTransfuciones"
                   id="inputHistoriaClinicaTransfuciones"
                   className="form-check-input text fs-4 "
+                  value={transfuciones}
+                  onChange={(e) => {
+                    setTransfuciones(e.target.value)
+                  }}
                 />
                 <label
                   htmlFor="inputHistoriaClinicaTransfuciones"
@@ -735,6 +876,10 @@ const FormHistoriaClinica = () => {
                   name="inputHistoriaClinicaQuirurgicos"
                   id="inputHistoriaClinicaQuirurgicos"
                   className="form-check-input text fs-4 "
+                  value={quirurgicos}
+                  onChange={(e) => {
+                    setQuirurgicos(e.target.value)
+                  }}
                 />
                 <label
                   htmlFor="inputHistoriaClinicaQuirurgicos"
@@ -749,6 +894,10 @@ const FormHistoriaClinica = () => {
                   name="inputHistoriaClinicaHospitalizacion"
                   id="inputHistoriaClinicaHospitalizacion"
                   className="form-check-input text fs-4 "
+                  value={hospitalizacion}
+                  onChange={(e) => {
+                    setHospitalizacion(e.target.value)
+                  }}
                 />
                 <label
                   htmlFor="inputHistoriaClinicaHospitalizacion"
@@ -776,6 +925,10 @@ const FormHistoriaClinica = () => {
                 name="inputHistoriaClinicaPerimetroCefalico"
                 id="inputHistoriaClinicaPerimetroCefalico"
                 className="form-control"
+                value={perimetroCefalico}
+                onChange={(e) => {
+                  setPerimetroCefalico(e.target.value)
+                }}
               />
             </div>
             <div className="mb-3">
@@ -790,6 +943,10 @@ const FormHistoriaClinica = () => {
                 name="inputHistoriaClinicaPerimetroEmbarazo"
                 id="inputHistoriaClinicaPerimetroEmbarazo"
                 className="form-control"
+                value={perimetroEmbarazo}
+                onChange={(e) => {
+                  setPerimetroEmbarazo(e.target.value)
+                }}
               />
             </div>
             <div className="mb-3">
@@ -804,6 +961,10 @@ const FormHistoriaClinica = () => {
                 name="inputHistoriaClinicaPerimetroPierna"
                 id="inputHistoriaClinicaPerimetroPierna"
                 className="form-control"
+                value={perimetroPierna}
+                onChange={(e) => {
+                  setPerimetroPierna(e.target.value)
+                }}
               />
             </div>
             <div className="mb-3">
@@ -818,6 +979,10 @@ const FormHistoriaClinica = () => {
                 name="inputHistoriaClinicaSegmentoSuperior"
                 id="inputHistoriaClinicaSegmentoSuperior"
                 className="form-control"
+                value={segmentoSuperior}
+                onChange={(e) => {
+                  setSegmentoSuperior(e.target.value)
+                }}
               />
             </div>
             <div className="mb-3">
@@ -832,6 +997,10 @@ const FormHistoriaClinica = () => {
                 name="inputHistoriaClinicaSegmentoInferior"
                 id="inputHistoriaClinicaSegmentoInferior"
                 className="form-control"
+                value={segmentoInferior}
+                onChange={(e) => {
+                  setSegmentoInferior(e.target.value)
+                }}
               />
             </div>
             <div className="mb-3">
@@ -846,6 +1015,10 @@ const FormHistoriaClinica = () => {
                 name="inputHistoriaClinicaTensionArterial"
                 id="inputHistoriaClinicaTensionArterial"
                 className="form-control"
+                value={tensionArterial}
+                onChange={(e) => {
+                  setTensionArterial(e.target.value)
+                }}
               />
             </div>
             <div className="mb-3">
@@ -860,6 +1033,10 @@ const FormHistoriaClinica = () => {
                 name="inputHistoriaClinicaFrecuenciaCardiaca"
                 id="inputHistoriaClinicaFrecuenciaCardiaca"
                 className="form-control"
+                value={frecuenciaCardiaca}
+                onChange={(e) => {
+                  setFrecuenciaCardiaca(e.target.value)
+                }}
               />
             </div>
             <div className="mb-3">
@@ -874,6 +1051,10 @@ const FormHistoriaClinica = () => {
                 name="inputHistoriaClinicaFrecuenciaRespiratoria"
                 id="inputHistoriaClinicaFrecuenciaRespiratoria"
                 className="form-control"
+                value={frecuenciaRespiratoria}
+                onChange={(e) => {
+                  setFrecuenciaRespiratoria(e.target.value)
+                }}
               />
             </div>
             <div className="mb-3">
@@ -888,6 +1069,10 @@ const FormHistoriaClinica = () => {
                 name="inputHistoriaClinicaTemperatura"
                 id="inputHistoriaClinicaTemperatura"
                 className="form-control"
+                value={temperatura}
+                onChange={(e) => {
+                  setTemperatura(e.target.value)
+                }}
               />
             </div>
           </div>
@@ -905,6 +1090,10 @@ const FormHistoriaClinica = () => {
                   name="inputHistoriaClinicaAnormalidadesPiel"
                   id="inputHistoriaClinicaAnormalidadesPiel"
                   className="form-check-input text fs-4 "
+                  value={piel}
+                  onChange={(e) => {
+                    setPiel(e.target.value)
+                  }}
                 />
                 <label
                   htmlFor="inputHistoriaClinicaAnormalidadesPiel"
@@ -919,6 +1108,10 @@ const FormHistoriaClinica = () => {
                   name="inputHistoriaClinicaAnormalidadesCabeza"
                   id="inputHistoriaClinicaAnormalidadesCabeza"
                   className="form-check-input text fs-4 "
+                  value={cabeza}
+                  onChange={(e) => {
+                    setCabeza(e.target.value)
+                  }}
                 />
                 <label
                   htmlFor="inputHistoriaClinicaAnormalidadesCabeza"
@@ -933,6 +1126,10 @@ const FormHistoriaClinica = () => {
                   name="inputHistoriaClinicaAnormalidadesOjos"
                   id="inputHistoriaClinicaAnormalidadesOjos"
                   className="form-check-input text fs-4 "
+                  value={ojos}
+                  onChange={(e) => {
+                    setOjos(e.target.value)
+                  }}
                 />
                 <label
                   htmlFor="inputHistoriaClinicaAnormalidadesOjos"
@@ -947,6 +1144,10 @@ const FormHistoriaClinica = () => {
                   name="inputHistoriaClinicaAnormalidadesOidos"
                   id="inputHistoriaClinicaAnormalidadesOidos"
                   className="form-check-input text fs-4 "
+                  value={oidos}
+                  onChange={(e) => {
+                    setOidos(e.target.value)
+                  }}
                 />
                 <label
                   htmlFor="inputHistoriaClinicaAnormalidadesOidos"
@@ -961,6 +1162,10 @@ const FormHistoriaClinica = () => {
                   name="inputHistoriaClinicaAnormalidadesNariz"
                   id="inputHistoriaClinicaAnormalidadesNariz"
                   className="form-check-input text fs-4 "
+                  value={nariz}
+                  onChange={(e) => {
+                    setNariz(e.target.value)
+                  }}
                 />
                 <label
                   htmlFor="inputHistoriaClinicaAnormalidadesNariz"
@@ -977,6 +1182,10 @@ const FormHistoriaClinica = () => {
                   name="inputHistoriaClinicaAnormalidadesBoca"
                   id="inputHistoriaClinicaAnormalidadesBoca"
                   className="form-check-input text fs-4 "
+                  value={boca}
+                  onChange={(e) => {
+                    setBoca(e.target.value)
+                  }}
                 />
                 <label
                   htmlFor="inputHistoriaClinicaAnormalidadesBoca"
@@ -991,6 +1200,10 @@ const FormHistoriaClinica = () => {
                   name="inputHistoriaClinicaAnormalidadesCuello"
                   id="inputHistoriaClinicaAnormalidadesCuello"
                   className="form-check-input text fs-4 "
+                  value={cuello}
+                  onChange={(e) => {
+                    setCuello(e.target.value)
+                  }}
                 />
                 <label
                   htmlFor="inputHistoriaClinicaAnormalidadesCuello"
@@ -1005,6 +1218,10 @@ const FormHistoriaClinica = () => {
                   name="inputHistoriaClinicaAnormalidadesTorax"
                   id="inputHistoriaClinicaAnormalidadesTorax"
                   className="form-check-input text fs-4 "
+                  value={torax}
+                  onChange={(e) => {
+                    setTorax(e.target.value)
+                  }}
                 />
                 <label
                   htmlFor="inputHistoriaClinicaAnormalidadesTorax"
@@ -1019,6 +1236,10 @@ const FormHistoriaClinica = () => {
                   name="inputHistoriaClinicaAnormalidadesAreaCardiaca"
                   id="inputHistoriaClinicaAnormalidadesAreaCardiaca"
                   className="form-check-input text fs-4 "
+                  value={areaCardiaca}
+                  onChange={(e) => {
+                    setAreaCardiaca(e.target.value)
+                  }}
                 />
                 <label
                   htmlFor="inputHistoriaClinicaAnormalidadesAreaCardiaca"
@@ -1033,6 +1254,10 @@ const FormHistoriaClinica = () => {
                   name="inputHistoriaClinicaAnormalidadesPulmonar"
                   id="inputHistoriaClinicaAnormalidadesPulmonar"
                   className="form-check-input text fs-4 "
+                  value={pulmonar}
+                  onChange={(e) => {
+                    setPulmonar(e.target.value)
+                  }}
                 />
                 <label
                   htmlFor="inputHistoriaClinicaAnormalidadesPulmonar"
@@ -1057,6 +1282,10 @@ const FormHistoriaClinica = () => {
             name="inputHistoriaNombreMedico"
             id="inputHistoriaNombreMedico"
             className="form-control"
+            value={nombreMedico}
+            onChange={(e) => {
+              setNombreMedico(e.target.value)
+            }}
           />
         </div>
 

@@ -1,7 +1,7 @@
 import HistoriaClinica from "components/historiaClinica/HistoriaClinica"
 import { useRouter } from 'next/router';
 
-export default function historia_clinica() {
+export default function historiaClinica() {
     const router = useRouter();
 
     return(

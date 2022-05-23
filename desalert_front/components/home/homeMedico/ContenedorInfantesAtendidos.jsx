@@ -21,7 +21,7 @@ const ContenedorInfantesAtendidos = () => {
   };
 
   const filtrar = (terminoBusqueda) => {
-    var resultadoBusqueda = filtrados.filter((elemento) => {
+    let resultadoBusqueda = filtrados.filter((elemento) => {
       if (
         elemento.name
           .toString()
@@ -33,7 +33,7 @@ const ContenedorInfantesAtendidos = () => {
           .includes(terminoBusqueda.toLowerCase())
       ) {
         return elemento;
-      }
+      } else { return null }
     });
     setAtendidos(resultadoBusqueda);
   };

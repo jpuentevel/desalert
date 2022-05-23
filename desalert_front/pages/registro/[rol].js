@@ -6,19 +6,19 @@ import RegistroMedico from 'components/registros/registroMedico/RegistroMedico';
 export default function registro() {
     const router = useRouter();
     
-    if (router.query.rol == "acudiente") {
+    if (router.query.rol === "acudiente") {
         return (
           <>
             <RegistroAcudiente />
           </>
         );
-      } else if (router.query.rol == "auxiliar") {
+      } else if (router.query.rol === "auxiliar") {
         return (
           <>
             <RegistroAuxiliar />
           </>
         );
-      } else if (router.query.rol == "medico") {
+      } else if (router.query.rol === "medico") {
         return (
           <>
             <RegistroMedico />
