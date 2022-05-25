@@ -1,39 +1,41 @@
 import Link from "next/link"
 import React, { useState } from "react"
+import FormRegistroUsuario from "../FormRegistroUsuario"
 
 const FormRegistroAuxiliar = () => {
   const [AuxiliarNombre, setAuxiliarNombre] = useState("")
   const [AuxiliarID, setAuxiliarID] = useState("")
-  const [AuxiliarEmail, setAuxiliarEmail] = useState("")
   const [AuxiliarTelefono, setAuxiliarTelefono] = useState("")
   const [AuxiliarDireccion, setAuxiliarDireccion] = useState("")
-  const [AuxiliarPassword, setAuxiliarPassword] = useState("")
   const [AuxiliarGenero, setAuxiliarGenero] = useState("")
   const [AuxiliarFechaNacimiento, setAuxiliarFechaNacimiento] = useState("")
 
+  const [visibleAuxiliar, setVisibleAuxiliar] = useState(true)
+  const [visibleUsuario, setVisibleUsuario] = useState(false)
+  const NORMAL = "row"
+  const HIDDEN = NORMAL + " d-none"
+
   const handleSubmitAuxiliar = async (e) => {
-    e.preventDefault();
-    const urlAuxiliar="";
+    e.preventDefault()
+    const urlAuxiliar = ``
     const dataAuxiliar = {}
 
     await fetch(urlAuxiliar, {
-        method: "POST",
-        body: JSON.stringify(dataAuxiliar),
-        headers: {
-          "Accept": "application.json",
-          "Content-Type": "application/json"
-        }
-      }).then(res => res.json())
-      .catch(error => console.error("Error: ", error))
-      .then(response => console.log("Succes: ", response));
-  
-      const urlUsuario = ""
-      const dataUsuario = {}
+      method: "POST",
+      body: JSON.stringify(dataAuxiliar),
+      headers: {
+        Accept: "application.json",
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .catch((error) => console.error("Error: ", error))
+      .then((response) => console.log("Succes: ", response))
   }
 
   return (
     <>
-      <form className="row">
+      <form className={visibleAuxiliar ? NORMAL : HIDDEN}>
         <div className="col col-lg-6 col-sm-12">
           <div className="mb-3">
             <label
@@ -48,7 +50,9 @@ const FormRegistroAuxiliar = () => {
               id="inputRegistroAuxiliarNombre"
               name="inputRegistroAuxiliarNombre"
               value={AuxiliarNombre}
-              onChange={(e) => {setAuxiliarNombre(e.target.value)}}
+              onChange={(e) => {
+                setAuxiliarNombre(e.target.value)
+              }}
             />
           </div>
           <div className="mb-3">
@@ -64,23 +68,9 @@ const FormRegistroAuxiliar = () => {
               id="inputAuxiliarRegistroID"
               name="inputAuxiliarRegistroID"
               value={AuxiliarID}
-              onChange={(e) => {setAuxiliarID(e.target.value)}}
-            />
-          </div>
-          <div className="mb-3">
-            <label
-              htmlFor="inputRegistroAuxiliarEmail"
-              className="form-label text fs-4"
-            >
-              Email
-            </label>
-            <input
-              type="email"
-              className="form-control"
-              id="inputRegistroAuxiliarEmail"
-              name="inputRegistroAuxiliarEmail"
-              value={AuxiliarEmail}
-              onChange={(e) => {setAuxiliarEmail(e.target.value)}}
+              onChange={(e) => {
+                setAuxiliarID(e.target.value)
+              }}
             />
           </div>
           <div className="mb-3">
@@ -96,7 +86,9 @@ const FormRegistroAuxiliar = () => {
               id="inputRegistroAuxiliarTelefono"
               name="inputRegistroAuxiliarTelefono"
               value={AuxiliarTelefono}
-              onChange={(e) => {setAuxiliarTelefono(e.target.value)}}
+              onChange={(e) => {
+                setAuxiliarTelefono(e.target.value)
+              }}
             />
           </div>
         </div>
@@ -115,23 +107,9 @@ const FormRegistroAuxiliar = () => {
               id="inputRegistroAuxiliarDireccion"
               name="inputRegistroAuxiliarDireccion"
               value={AuxiliarDireccion}
-              onChange={(e) => {setAuxiliarDireccion(e.target.value)}}
-            />
-          </div>
-          <div className="mb-3">
-            <label
-              htmlFor="inputRegistroAuxiliarPassword"
-              className="form-label text fs-4"
-            >
-              Contraseña
-            </label>
-            <input
-              type="password"
-              className="form-control"
-              id="inputRegistroAuxiliarPassword"
-              name="inputRegistroAuxiliarPassword"
-              value={AuxiliarPassword}
-              onChange={(e) => {setAuxiliarPassword(e.target.value)}}
+              onChange={(e) => {
+                setAuxiliarDireccion(e.target.value)
+              }}
             />
           </div>
           <div className="input-group mb-3 padding-genero">
@@ -141,7 +119,14 @@ const FormRegistroAuxiliar = () => {
             >
               Género
             </label>
-            <select className="form-select" id="inputRegistroAuxiliarGenero" value={AuxiliarGenero} onChange={(e) => {setAuxiliarGenero(e.target.value)}}>
+            <select
+              className="form-select"
+              id="inputRegistroAuxiliarGenero"
+              value={AuxiliarGenero}
+              onChange={(e) => {
+                setAuxiliarGenero(e.target.value)
+              }}
+            >
               <option className="text fs-4" value="otro">
                 Otro
               </option>
@@ -166,17 +151,32 @@ const FormRegistroAuxiliar = () => {
               id="inputRegistroAuxiliarFechaNacimiento"
               name="inputRegistroAuxiliarFechaNacimiento"
               value={AuxiliarFechaNacimiento}
-              onChange={(e) => {setAuxiliarFechaNacimiento(e.target.value)}}
+              onChange={(e) => {
+                setAuxiliarFechaNacimiento(e.target.value)
+              }}
             />
           </div>
         </div>
 
-        <Link href="/home/[rolHome]" as={`/home/auxiliar`} passHref>
-          <button type="submit" className="btn boton-login mt-3 text fs-5">
-            Registrarse
-          </button>
-        </Link>
+        <button
+          onClick={(e) => {
+            e.preventDefault()
+            setVisibleAuxiliar(false)
+            setVisibleUsuario(true)
+            console.log(visibleAuxiliar)
+          }}
+          type="submit"
+          className="btn boton-login mt-3 text fs-5"
+        >
+          Siguiente
+        </button>
       </form>
+
+      <FormRegistroUsuario
+        rol="auxiliar"
+        id={AuxiliarID}
+        visible={visibleUsuario}
+      />
     </>
   )
 }

@@ -92,7 +92,7 @@ const FormHistoriaClinica = () => {
   const [nombreMedico, setNombreMedico] = useState("")
 
   const handleClickCalcularIMC = () => {
-    //e.preventDefault()
+    // e.preventDefault()
 
     Promise.all([
       setImc(calcularIMC(altura, peso)),
@@ -200,8 +200,6 @@ const FormHistoriaClinica = () => {
               className="form-control"
               name="inputHistoriaClinicaPadecimientos"
               id="inputHistoriaClinicaPadecimientos"
-              cols="30"
-              rows="10"
               value={padecimientos}
               onChange={(e) => {
                 setPadecimientos(e.target.value)
@@ -219,8 +217,6 @@ const FormHistoriaClinica = () => {
               className="form-control"
               name="inputHistoriaClinicaDiagnosticoPrevio"
               id="inputHistoriaClinicaDiagnosticoPrevio"
-              cols="30"
-              rows="10"
               value={diagnosticoPrevio}
               onChange={(e) => {
                 setDiagnosticoPrevio(e.target.value)
@@ -759,7 +755,7 @@ const FormHistoriaClinica = () => {
             >
               Datos anormales
             </label>
-            <input
+            <textarea
               type="text"
               name="inputHistoriaClinicaDatosAnormales"
               id="inputHistoriaClinicaDatosAnormales"
@@ -768,7 +764,7 @@ const FormHistoriaClinica = () => {
               onChange={(e) => {
                 setDatosAnormales(e.target.value)
               }}
-            />
+            ></textarea>
           </div>
           <div className="mb-3">
             <label
@@ -777,7 +773,7 @@ const FormHistoriaClinica = () => {
             >
               Alteraciones del lenguaje
             </label>
-            <input
+            <textarea
               type="text"
               name="inputHistoriaClinicaAlteracionesLenguaje"
               id="inputHistoriaClinicaAlteracionesLenguaje"
@@ -786,7 +782,7 @@ const FormHistoriaClinica = () => {
               onChange={(e) => {
                 setAlteracionesLenguaje(e.target.value)
               }}
-            />
+            ></textarea>
           </div>
         </div>
 

@@ -1,16 +1,20 @@
 import Link from "next/link"
 import React, { useState } from "react"
+import FormRegistroUsuario from "../FormRegistroUsuario"
 
 const FormRegistroMedico = () => {
   const [MedicoNombre, setMedicoNombre] = useState("")
   const [MedicoID, setMedicoID] = useState("")
-  const [MedicoEmail, setMedicoEmail] = useState("")
   const [MedicoTelefono, setMedicoTelefono] = useState("")
   const [MedicoDireccion, setMedicoDireccion] = useState("")
-  const [MedicoPassword, setMedicoPassword] = useState("")
   const [MedicoGenero, setMedicoGenero] = useState("")
   const [MedicoFechaNacimiento, setMedicoFechaNacimiento] = useState("")
   const [MedicoEspecialidad, setMedicoEspecialidad] = useState("")
+
+  const [visibleMedico, setVisibleMedico] = useState(true)
+  const [visibleUsuario, setVisibleUsuario] = useState(false)
+  const NORMAL = "row"
+  const HIDDEN = NORMAL + " d-none"
 
   const handleSubmitMedico = async (e) => {
     e.preventDefault()
@@ -28,14 +32,11 @@ const FormRegistroMedico = () => {
       .then((res) => res.json())
       .catch((error) => console.error("Error: ", error))
       .then((response) => console.log("Succes: ", response))
-
-    const urlUsuario = ""
-    const dataUsuario = {}
   }
 
   return (
     <>
-      <form className="row">
+      <form className={visibleMedico ? NORMAL : HIDDEN}>
         <div className="col col-lg-6 col-sm-12">
           <div className="mb-3">
             <label
@@ -70,24 +71,6 @@ const FormRegistroMedico = () => {
               value={MedicoID}
               onChange={(e) => {
                 setMedicoID(e.target.value)
-              }}
-            />
-          </div>
-          <div className="mb-3">
-            <label
-              htmlFor="inputRegistroMedicoEmail"
-              className="form-label text fs-4"
-            >
-              Email
-            </label>
-            <input
-              type="email"
-              className="form-control"
-              id="inputRegistroMedicoEmail"
-              name="inputRegistroMedicoEmail"
-              value={MedicoEmail}
-              onChange={(e) => {
-                setMedicoEmail(e.target.value)
               }}
             />
           </div>
@@ -148,24 +131,6 @@ const FormRegistroMedico = () => {
               }}
             />
           </div>
-          <div className="mb-3">
-            <label
-              htmlFor="inputRegistroMedicoPassword"
-              className="form-label text fs-4"
-            >
-              Contraseña
-            </label>
-            <input
-              type="password"
-              className="form-control"
-              id="inputRegistroMedicoPassword"
-              name="inputRegistroMedicoPassword"
-              value={MedicoPassword}
-              onChange={(e) => {
-                setMedicoPassword(e.target.value)
-              }}
-            />
-          </div>
           <div className="input-group mb-3 padding-genero">
             <label
               className="input-group-text text fs-4"
@@ -212,12 +177,25 @@ const FormRegistroMedico = () => {
           </div>
         </div>
 
-        <Link href="/home/[rolHome]" as={`/home/medico`} passHref>
-          <button type="submit" className="btn boton-login mt-3 text fs-5">
-            Registrarse
-          </button>
-        </Link>
+        <button
+          onClick={(e) => {
+            e.preventDefault()
+            setVisibleMedico(false)
+            setVisibleUsuario(true)
+            console.log(visibleMedico)
+          }}
+          type="submit"
+          className="btn boton-login mt-3 text fs-5"
+        >
+          Siguiente
+        </button>
       </form>
+
+      <FormRegistroUsuario
+        rol="medico"
+        id={MedicoID}
+        visible={visibleUsuario}
+      />
     </>
   )
 }

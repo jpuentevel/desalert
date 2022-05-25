@@ -1,21 +1,23 @@
-import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState } from "react"
+import FormRegistroUsuario from "../FormRegistroUsuario"
 
 const FormRegistroAcudiente = () => {
+  const [AcudienteNombre, setAcudienteNombre] = useState("")
+  const [AcudienteID, setAcudienteID] = useState("")
+  const [AcudienteTelefono, setAcudienteTelefono] = useState("")
+  const [AcudienteDireccion, setAcudienteDireccion] = useState("")
+  const [AcudienteGenero, setAcudienteGenero] = useState("")
+  const [AcudienteFechaNacimiento, setAcudienteFechaNacimiento] = useState("")
+  const [AcudienteParentesco, setAcudienteParentesco] = useState("")
 
-  const [AcudienteNombre, setAcudienteNombre] = useState("");
-  const [AcudienteID, setAcudienteID] = useState("");
-  const [AcudienteEmail, setAcudienteEmail] = useState("");
-  const [AcudienteTelefono, setAcudienteTelefono] = useState("");
-  const [AcudienteDireccion, setAcudienteDireccion] = useState("");
-  const [AcudientePassword, setAcudientePassword] = useState("");
-  const [AcudienteGenero, setAcudienteGenero] = useState("");
-  const [AcudienteFechaNacimiento, setAcudienteFechaNacimiento] = useState("");
-  const [AcudienteParentesco, setAcudienteParentesco] = useState("");
+  const [visibleAcudiente, setVisibleAcudiente] = useState(true)
+  const [visibleUsuario, setVisibleUsuario] = useState(false)
+  const NORMAL = "row"
+  const HIDDEN = NORMAL + " d-none"
 
   const handleSubmitAcudiente = async (e) => {
-    e.preventDefault();
-    const urlAcudiente="";
+    e.preventDefault()
+    const urlAcudiente = ``
     const dataAcudiente = {
       id: AcudienteID,
       nombre: AcudienteNombre,
@@ -23,27 +25,25 @@ const FormRegistroAcudiente = () => {
       fechaNacimiento: AcudienteFechaNacimiento,
       sexo: AcudienteGenero,
       telefono: AcudienteTelefono,
-      parentesco: AcudienteParentesco
-    };
+      parentesco: AcudienteParentesco,
+    }
 
     await fetch(urlAcudiente, {
       method: "POST",
       body: JSON.stringify(dataAcudiente),
       headers: {
-        "Accept": "application.json",
-        "Content-Type": "application/json"
-      }
-    }).then(res => res.json())
-    .catch(error => console.error("Error: ", error))
-    .then(response => console.log("Succes: ", response));
-
-    const urlUsuario = ""
-    const dataUsuario = {}
+        Accept: "application.json",
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .catch((error) => console.error("Error: ", error))
+      .then((response) => console.log("Succes: ", response))
   }
 
   return (
     <>
-      <form className="row">
+      <form className={visibleAcudiente ? NORMAL : HIDDEN}>
         <div className="col col-lg-6 col-sm-12">
           <div className="mb-3">
             <label
@@ -58,7 +58,9 @@ const FormRegistroAcudiente = () => {
               id="inputRegistroAcudienteNombre"
               name="inputRegistroAcudienteNombre"
               value={AcudienteNombre}
-              onChange={(e) => {setAcudienteNombre(e.target.value)}}
+              onChange={(e) => {
+                setAcudienteNombre(e.target.value)
+              }}
             />
           </div>
           <div className="mb-3">
@@ -74,23 +76,9 @@ const FormRegistroAcudiente = () => {
               id="inputAcudienteRegistroID"
               name="inputAcudienteRegistroID"
               value={AcudienteID}
-              onChange={(e) => {setAcudienteID(e.target.value)}}
-            />
-          </div>
-          <div className="mb-3">
-            <label
-              htmlFor="inputRegistroAcudienteEmail"
-              className="form-label text fs-4"
-            >
-              Email
-            </label>
-            <input
-              type="email"
-              className="form-control"
-              id="inputRegistroAcudienteEmail"
-              name="inputRegistroAcudienteEmail"
-              value={AcudienteEmail}
-              onChange={(e) => {setAcudienteEmail(e.target.value)}}
+              onChange={(e) => {
+                setAcudienteID(e.target.value)
+              }}
             />
           </div>
           <div className="mb-3">
@@ -106,7 +94,9 @@ const FormRegistroAcudiente = () => {
               id="inputRegistroAcudienteTelefono"
               name="inputRegistroAcudienteTelefono"
               value={AcudienteTelefono}
-              onChange={(e) => {setAcudienteTelefono(e.target.value)}}
+              onChange={(e) => {
+                setAcudienteTelefono(e.target.value)
+              }}
             />
           </div>
         </div>
@@ -125,23 +115,9 @@ const FormRegistroAcudiente = () => {
               id="inputRegistroAcudienteDireccion"
               name="inputRegistroAcudienteDireccion"
               value={AcudienteDireccion}
-              onChange={(e) => {setAcudienteDireccion(e.target.value)}}
-            />
-          </div>
-          <div className="mb-3">
-            <label
-              htmlFor="inputRegistroAcudientePassword"
-              className="form-label text fs-4"
-            >
-              Contraseña
-            </label>
-            <input
-              type="password"
-              className="form-control"
-              id="inputRegistroAcudientePassword"
-              name="inputRegistroAcudientePassword"
-              value={AcudientePassword}
-              onChange={(e) => {setAcudientePassword(e.target.value)}}
+              onChange={(e) => {
+                setAcudienteDireccion(e.target.value)
+              }}
             />
           </div>
           <div className="input-group mb-3 padding-genero">
@@ -151,7 +127,14 @@ const FormRegistroAcudiente = () => {
             >
               Género
             </label>
-            <select className="form-select" id="inputRegistroAcudienteGenero" value={AcudienteGenero} onChange={(e) => {setAcudienteGenero(e.target.value)}}>
+            <select
+              className="form-select"
+              id="inputRegistroAcudienteGenero"
+              value={AcudienteGenero}
+              onChange={(e) => {
+                setAcudienteGenero(e.target.value)
+              }}
+            >
               <option className="text fs-4" value="otro">
                 Otro
               </option>
@@ -176,35 +159,52 @@ const FormRegistroAcudiente = () => {
               id="inputRegistroAcudienteFechaNacimiento"
               name="inputRegistroAcudienteFechaNacimiento"
               value={AcudienteFechaNacimiento}
-              onChange={(e) => {setAcudienteFechaNacimiento(e.target.value)}}
-            />
-          </div>
-          <div className="mb-3">
-            <label
-              htmlFor="inputRegistroAcudienteParentesco"
-              className="form-label text fs-4"
-            >
-              Parentesco con el infante
-            </label>
-            <input
-              type="text"
-              className="form-control fs-4"
-              id="inputRegistroAcudienteParentesco"
-              name="inputRegistroAcudienteParentesco"
-              value={AcudienteParentesco}
-              onChange={(e) => {setAcudienteParentesco(e.target.value)}}
+              onChange={(e) => {
+                setAcudienteFechaNacimiento(e.target.value)
+              }}
             />
           </div>
         </div>
+        <div className="mb-3">
+          <label
+            htmlFor="inputRegistroAcudienteParentesco"
+            className="form-label text fs-4"
+          >
+            Parentesco con el infante
+          </label>
+          <input
+            type="text"
+            className="form-control fs-4"
+            id="inputRegistroAcudienteParentesco"
+            name="inputRegistroAcudienteParentesco"
+            value={AcudienteParentesco}
+            onChange={(e) => {
+              setAcudienteParentesco(e.target.value)
+            }}
+          />
+        </div>
 
-        <Link href="/home/[rolHome]" as={`/home/acudiente`} passHref>
-          <button type="submit" className="btn boton-login mt-3 text fs-5">
-            Registrarse
-          </button>
-        </Link>
+        <button
+          onClick={(e) => {
+            e.preventDefault()
+            setVisibleAcudiente(false)
+            setVisibleUsuario(true)
+            console.log(visibleAcudiente)
+          }}
+          type="submit"
+          className="btn boton-login mt-3 text fs-5"
+        >
+          Siguiente
+        </button>
       </form>
-    </>
-  );
-};
 
-export default FormRegistroAcudiente;
+      <FormRegistroUsuario
+        rol="acudiente"
+        id={AcudienteID}
+        visible={visibleUsuario}
+      />
+    </>
+  )
+}
+
+export default FormRegistroAcudiente

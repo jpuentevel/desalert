@@ -79,6 +79,15 @@ a {
     border-color: #02121b;
     font-size: 1rem;
   }
+
+  .contendor-imagen-infante {
+    border-color: #84b6f4;
+    border-width: 0.2rem;
+    border-style: solid;
+    border-radius: 1rem;
+    height: 23rem;
+    width: 23rem;
+  }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -131,6 +140,15 @@ a {
     border-width: 0.2rem;
     border-color: #02121b;
     font-size: 1.3rem;
+  }
+
+  .contendor-imagen-infante {
+    border-color: #84b6f4;
+    border-width: 0.2rem;
+    border-style: solid;
+    border-radius: 1rem;
+    height: 32rem;
+    width: 32rem;
   }
 }
 
@@ -190,6 +208,15 @@ a {
     border-width: 0.2rem;
     border-color: #02121b;
     font-size: 1.2rem;
+  }
+
+  .contendor-imagen-infante {
+    border-color: #84b6f4;
+    border-width: 0.2rem;
+    border-style: solid;
+    border-radius: 1rem;
+    height: 42rem;
+    width: 42rem;
   }
 }
 
@@ -460,15 +487,6 @@ a {
   margin-right: auto;
 }
 
-.contendor-imagen-infante {
-  border-color: #84b6f4;
-  border-width: 0.2rem;
-  border-style: solid;
-  border-radius: 1rem;
-  height: 15rem;
-  width: 15rem;
-}
-
 .imagen-infante {
   background-size: cover;
   width: 100% !important;
@@ -533,10 +551,10 @@ a {
 }
 
 .texto-swal {
-    color: white !important;
-    font-weight: bold !important;
+  color: white !important;
+  font-weight: bold !important;
 }
 
 .icon-swal {
-    background-color: white !important;
+  background-color: white !important;
 }
